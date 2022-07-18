@@ -1,7 +1,7 @@
 /*
  * @Author: Pacific_D
  * @Date: 2022-07-18 15:30:37
- * @LastEditTime: 2022-07-18 16:10:19
+ * @LastEditTime: 2022-07-18 16:53:45
  * @LastEditors: Pacific_D
  * @Description:
  * @FilePath: \less-music\src\types\route.ts

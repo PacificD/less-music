@@ -1,7 +1,7 @@
 /*
  * @Author: Pacific_D
  * @Date: 2022-07-18 10:14:40
- * @LastEditTime: 2022-07-18 14:42:20
+ * @LastEditTime: 2022-07-18 17:00:47
  * @LastEditors: Pacific_D
  * @Description:
  * @FilePath: \less-music\src\pages\home\index.tsx
@@ -9,7 +9,19 @@
 
 import { FC, useEffect } from "react"
 import { ColorModeSwitcher, Logo } from "@/components"
-import { Box, Text, Link, VStack, Code, Grid } from "@chakra-ui/react"
+import {
+    Box,
+    Text,
+    Link,
+    VStack,
+    Code,
+    Grid,
+    Tabs,
+    TabList,
+    Tab,
+    TabPanels,
+    TabPanel
+} from "@chakra-ui/react"
 import { userApi } from "@/services/services"
 
 const Home: FC = () => {
@@ -19,6 +31,25 @@ const Home: FC = () => {
 
     return (
         <Box fontSize="xl" textAlign="center">
+            <Tabs>
+                <TabList>
+                    <Tab>One</Tab>
+                    <Tab>Two</Tab>
+                    <Tab>Three</Tab>
+                </TabList>
+
+                <TabPanels>
+                    <TabPanel>
+                        <p>one!</p>
+                    </TabPanel>
+                    <TabPanel>
+                        <p>two!</p>
+                    </TabPanel>
+                    <TabPanel>
+                        <p>three!</p>
+                    </TabPanel>
+                </TabPanels>
+            </Tabs>
             <Grid minH="100vh" p={3}>
                 <ColorModeSwitcher justifySelf="flex-end" />
                 <VStack spacing={8}>
