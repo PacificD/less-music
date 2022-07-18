@@ -1,12 +1,4 @@
 # 项目名称
-###
- # @Author: Pacific_D
- # @Date: 2022-07-18 12:36:53
- # @LastEditTime: 2022-07-18 12:36:53
- # @LastEditors: Pacific_D
- # @Description: 
- # @FilePath: \less-music\deploy.sh
-### 
 WEB_NAME="lesschat-frontend"
 # 端口号
 PORT="3000"
