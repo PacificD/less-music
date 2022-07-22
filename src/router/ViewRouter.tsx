@@ -1,18 +1,31 @@
 /*
  * @Author: Pacific_D
  * @Date: 2022-07-19 09:57:29
- * @LastEditTime: 2022-07-19 10:33:45
+ * @LastEditTime: 2022-07-22 17:34:09
  * @LastEditors: Pacific_D
  * @Description:
  * @FilePath: \less-music\src\router\ViewRouter.tsx
  */
 
+import { Flex } from "@chakra-ui/react"
 import { FC, Suspense } from "react"
 import RouterConfig from "./config"
 
 const ViewRouter: FC = () => {
     return (
-        <Suspense fallback={<div>Loading...</div>}>
+        <Suspense
+            fallback={
+                <Flex
+                    alignItems="center"
+                    fontSize="3xl"
+                    fontWeight="bold"
+                    justifyContent="center"
+                    mt={32}
+                >
+                    Loading...
+                </Flex>
+            }
+        >
             <RouterConfig />
         </Suspense>
     )

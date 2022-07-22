@@ -1,47 +1,46 @@
 /*
  * @Author: Pacific_D
  * @Date: 2022-07-18 10:14:40
- * @LastEditTime: 2022-07-22 14:26:59
+ * @LastEditTime: 2022-07-22 20:20:55
  * @LastEditors: Pacific_D
  * @Description:
  * @FilePath: \less-music\src\pages\Home\index.tsx
  */
 
 import { FC } from "react"
-import { ColorModeSwitcher, Logo } from "@/components"
-import { Box, Text, Link, VStack, Code, Grid } from "@chakra-ui/react"
-import { userApi } from "@/services"
+import { ColorModeSwitcher } from "@/components"
+import { Box, Text, VStack, Grid } from "@chakra-ui/react"
+import { useHotTopicQuery } from "@/services"
 
 const Home: FC = () => {
-    const send = () => {
-        userApi.test().then(res => console.log(res))
+    const { data, isLoading, isError, error } = useHotTopicQuery(50, 20)
+
+    if (isLoading) {
+        return (
+            <Text color="red.400" fontSize="2xl" fontWeight="bold">
+                Loading ...
+            </Text>
+        )
     }
 
+    if (isError || !data) {
+        const msg = JSON.stringify(error)
+        return <div>fetch error: {msg}</div>
+    }
+    console.log(data)
     return (
         <Box fontSize="xl" textAlign="center">
             <Grid minH="100vh" p={3}>
                 <ColorModeSwitcher justifySelf="flex-end" />
                 <VStack spacing={8}>
-                    <Text fontSize="xl" onClick={send}>
-                        send
-                    </Text>
-                    <Logo h="40vmin" pointerEvents="none" />
-                    <Text>
-                        Edit <Code fontSize="xl">src/App.tsx</Code> and save to reload.
-                    </Text>
-                    <Link
-                        color="teal.500"
-                        fontSize="2xl"
-                        href="https://chakra-ui.com"
-                        rel="noopener noreferrer"
-                        target="_blank"
-                    >
-                        Learn Chakra
-                    </Link>
+                    {data.hot.map((topic: any) => (
+                        <Text key={topic.actId} maxW="80vw">
+                            {JSON.stringify(topic)}
+                        </Text>
+                    ))}
                 </VStack>
             </Grid>
         </Box>
     )
 }
-
 export default Home
