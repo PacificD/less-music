@@ -144,7 +144,7 @@
         "no-trailing-spaces": 1, //一行结束后面有空格就发出警告
         "eol-last": 0, //文件以单一的换行符结束
         "no-unused-vars": [
-            1,
+            0,
             {
                 "vars": "all",
                 "args": "after-used"
