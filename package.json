@@ -15,7 +15,7 @@
         "@testing-library/react": "^10.4.9",
         "@testing-library/user-event": "^12.8.3",
         "ahooks": "^3.5.2",
-        "axios": "^0.26.1",
+        "axios": "^0.27.2",
         "crypto-js": "^4.1.1",
         "embla-carousel-react": "^7.0.0-rc05",
         "framer-motion": "^4.1.17",

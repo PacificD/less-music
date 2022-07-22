@@ -1,12 +1,12 @@
 /*
  * @Author: Pacific_D
  * @Date: 2022-03-30 22:10:06
- * @LastEditTime: 2022-07-18 16:57:55
+ * @LastEditTime: 2022-07-22 15:15:11
  * @LastEditors: Pacific_D
  * @Description:
  * @FilePath: \less-music\src\services\services\user.api.ts
  */
-import axiosInstance from "../axios"
+import request from "../axios"
 import { ILogin } from "../model/user"
 import { AxiosResponse } from "axios"
 
@@ -16,11 +16,15 @@ import { AxiosResponse } from "axios"
  * @return {Promise}
  */
 const Login = (params: ILogin): Promise<AxiosResponse> => {
-    return axiosInstance.post("/user/login", params).then(res => res.data)
+    return request()
+        .post("/user/login", params)
+        .then(res => res.data)
 }
 
 const test = (): Promise<AxiosResponse> => {
-    return axiosInstance.get("/hot/topic").then(res => res.data)
+    return request()
+        .get("/hot/topic")
+        .then(res => res)
 }
 
 export default {
