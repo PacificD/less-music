@@ -1,7 +1,7 @@
 /*
  * @Author: Pacific_D
  * @Date: 2022-03-30 21:51:13
- * @LastEditTime: 2022-07-22 16:01:47
+ * @LastEditTime: 2022-07-22 18:15:44
  * @LastEditors: Pacific_D
  * @Description:
  * @FilePath: \less-music\src\services\axios.ts
@@ -10,6 +10,7 @@ import axios, { AxiosError, AxiosInstance, AxiosRequestConfig, AxiosResponse } f
 import defaultConfig, { LOCALSTORAGE_TOKEN_KEY } from "./config"
 import { showMessage } from "./status"
 import qs from "qs"
+import { IRes } from "@/types"
 
 // 请求Map，因为新版本axios不推荐使用cancelToken来取消请求，使用AbortController对象来实现
 // 重复请求时调用value的AbortController.abort()方法取消请求。
@@ -51,7 +52,7 @@ const abortRequest = (requestKey: string) => {
  * @param {AxiosRequestConfig} config
  * @return {*}
  */
-const request = (config?: AxiosRequestConfig): AxiosInstance => {
+const createAxiosInstance = (config?: AxiosRequestConfig): AxiosInstance => {
     const abortController = new AbortController()
 
     const axiosInstance: AxiosInstance = axios.create({
@@ -125,4 +126,4 @@ const request = (config?: AxiosRequestConfig): AxiosInstance => {
     return axiosInstance
 }
 
-export default request
+export default createAxiosInstance

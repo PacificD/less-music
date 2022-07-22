@@ -1,7 +1,7 @@
 /*
  * @Author: Pacific_D
  * @Date: 2022-07-22 12:35:42
- * @LastEditTime: 2022-07-22 15:30:49
+ * @LastEditTime: 2022-07-22 20:56:48
  * @LastEditors: Pacific_D
  * @Description:
  * @FilePath: \less-music\src\services\config.ts
@@ -16,7 +16,7 @@ const defaultConfig: AxiosRequestConfig = {
     headers: {
         "Content-Type": "application/json;charset=utf-8"
     },
-    withCredentials: true, // 跨域携带cookie
+    withCredentials: false, // 跨域携带cookie
     timeout: 3000,
     transformRequest: [
         data => {
