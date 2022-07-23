@@ -1,7 +1,7 @@
 /*
  * @Author: Pacific_D
  * @Date: 2022-07-19 10:16:22
- * @LastEditTime: 2022-07-19 10:35:49
+ * @LastEditTime: 2022-07-23 09:59:23
  * @LastEditors: Pacific_D
  * @Description:
  * @FilePath: \less-music\src\router\config\index.tsx
@@ -17,7 +17,7 @@ const RouterConfig = () => {
             element: <Home />
         },
         {
-            path: "/home",
+            path: "/",
             element: <Home />
             // children: [
             //     {
