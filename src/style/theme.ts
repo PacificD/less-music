@@ -1,14 +1,18 @@
 /*
  * @Author: Pacific_D
  * @Date: 2022-07-23 10:12:24
- * @LastEditTime: 2022-07-23 10:14:05
+ * @LastEditTime: 2022-07-25 17:29:16
  * @LastEditors: Pacific_D
  * @Description:
  * @FilePath: \less-music\src\style\theme.ts
  */
 import { extendTheme } from "@chakra-ui/react"
+import colors from "./colors"
 
 const theme = extendTheme({
+    colors,
+    initialColorMode: "light",
+    useSystemColorMode: false,
     layerStyles: {
         base: {
             bg: "gray.50",
@@ -20,6 +24,9 @@ const theme = extendTheme({
             color: "teal.700",
             borderColor: "orange.500"
         }
+    },
+    componentStyles: {
+        button: {}
     },
     textStyles: {
         h1: {
