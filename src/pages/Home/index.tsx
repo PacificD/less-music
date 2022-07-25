@@ -1,74 +1,24 @@
 /*
  * @Author: Pacific_D
  * @Date: 2022-07-18 10:14:40
- * @LastEditTime: 2022-07-18 17:00:47
- * @LastEditors: Pacific_D
+ * @LastEditTime: 2022-07-25 15:31:29
+ * @LastEditors: Ride-pig 327796210@qq.com
  * @Description:
- * @FilePath: \less-music\src\pages\home\index.tsx
+ * @FilePath: \less-music\src\pages\Home\index.tsx
  */
 
-import { FC, useEffect } from "react"
-import { ColorModeSwitcher, Logo } from "@/components"
-import {
-    Box,
-    Text,
-    Link,
-    VStack,
-    Code,
-    Grid,
-    Tabs,
-    TabList,
-    Tab,
-    TabPanels,
-    TabPanel
-} from "@chakra-ui/react"
-import { userApi } from "@/services/services"
+import { FC } from "react"
+import Header from "./Header"
+import Footer from "./Footer"
+import Main from "./Main"
 
 const Home: FC = () => {
-    useEffect(() => {
-        userApi.test().then(res => console.log(res))
-    }, [])
-
     return (
-        <Box fontSize="xl" textAlign="center">
-            <Tabs>
-                <TabList>
-                    <Tab>One</Tab>
-                    <Tab>Two</Tab>
-                    <Tab>Three</Tab>
-                </TabList>
-
-                <TabPanels>
-                    <TabPanel>
-                        <p>one!</p>
-                    </TabPanel>
-                    <TabPanel>
-                        <p>two!</p>
-                    </TabPanel>
-                    <TabPanel>
-                        <p>three!</p>
-                    </TabPanel>
-                </TabPanels>
-            </Tabs>
-            <Grid minH="100vh" p={3}>
-                <ColorModeSwitcher justifySelf="flex-end" />
-                <VStack spacing={8}>
-                    <Logo h="40vmin" pointerEvents="none" />
-                    <Text>
-                        Edit <Code fontSize="xl">src/App.tsx</Code> and save to reload.
-                    </Text>
-                    <Link
-                        color="teal.500"
-                        fontSize="2xl"
-                        href="https://chakra-ui.com"
-                        rel="noopener noreferrer"
-                        target="_blank"
-                    >
-                        Learn Chakra
-                    </Link>
-                </VStack>
-            </Grid>
-        </Box>
+        <>
+            <Header></Header>
+            <Main></Main>
+            <Footer></Footer>
+        </>
     )
 }
 
