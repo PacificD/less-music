@@ -1,30 +1,25 @@
 /*
  * @Author: Pacific_D
- * @Date: 2022-03-30 22:15:53
- * @LastEditTime: 2022-07-18 15:19:53
- * @LastEditors: Pacific_D
+ * @Date: 2022-07-18 10:14:40
+ * @LastEditTime: 2022-07-22 11:43:35
+ * @LastEditors: DZR
  * @Description:
- * @FilePath: \less-music\src\pages\index.tsx
+ * @FilePath: \less-music\src\pages\Home\index.tsx
  */
-import { FC, createContext } from "react"
-import ViewRouter from "@/router"
 
-export const AppContext = createContext<{
-    userInfo: string
-}>({} as any)
+import { FC } from "react"
+import Header from "./Header"
+import Main from "./Main"
+import Footer from "./Footer"
 
-const App: FC = () => {
-    let userInfo = "hello"
-
+const Home: FC = () => {
     return (
-        <AppContext.Provider
-            value={{
-                userInfo
-            }}
-        >
-            <ViewRouter></ViewRouter>
-        </AppContext.Provider>
+        <>
+            <Header></Header>
+            <Main></Main>
+            <Footer></Footer>
+        </>
     )
 }
 
-export default App
+export default Home
