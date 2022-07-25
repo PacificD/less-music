@@ -1,0 +1,25 @@
+#root {
+    user-select: none;
+}
+
+.list {
+    border-radius: 0.5em;
+    height: 2.5em;
+    line-height: 2.5em;
+    padding-left: 1em;
+    width: 12.5em;
+    cursor: pointer;
+    font-family: YouYuan;
+}
+
+.selectedList {
+    background-color: #f6f6f7;
+    font-weight: 700;
+    font-family: SimHei;
+    border-radius: 0.5em;
+    height: 2.5em;
+    line-height: 2.5em;
+    padding-left: 1em;
+    width: 12.5em;
+    cursor: pointer;
+}
