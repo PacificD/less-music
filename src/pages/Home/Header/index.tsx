@@ -1,7 +1,7 @@
 /*
  * @Author: DZR
  * @Date: 2022-07-20 09:30:37
- * @LastEditTime: 2022-07-30 11:24:17
+ * @LastEditTime: 2022-07-30 11:52:28
  * @LastEditors: Pacific_D
  * @Description:
  * @FilePath: \less-music\src\pages\Home\Header\index.tsx
@@ -11,6 +11,7 @@ import { FC } from "react"
 import { RiLoginBoxLine, RiNeteaseCloudMusicFill } from "react-icons/ri"
 import { AiOutlineLeft, AiOutlineRight, AiOutlineSearch } from "react-icons/ai"
 import { useNavigate } from "react-router-dom"
+import { ColorModeSwitcher } from "@/components"
 const CloudMusic = chakra(RiNeteaseCloudMusicFill)
 
 const Header: FC = () => {
@@ -64,6 +65,7 @@ const Header: FC = () => {
                         w="12em"
                     />
                     <Spacer></Spacer>
+                    <ColorModeSwitcher />
                     <RiLoginBoxLine color="white" fontSize="1.5em"></RiLoginBoxLine>
                 </Center>
             </Box>

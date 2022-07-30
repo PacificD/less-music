@@ -1,12 +1,11 @@
 /*
  * @Author: Pacific_D
  * @Date: 2022-07-22 14:21:33
- * @LastEditTime: 2022-07-30 11:18:41
+ * @LastEditTime: 2022-07-30 11:35:33
  * @LastEditors: Pacific_D
  * @Description:
  * @FilePath: \less-music\src\services\index.ts
  */
-export { default as useHotTopicQuery } from "./services/useHotTopicQuery"
 export { default as usePlaylistDetailQuery } from "./services/usePlaylistDetailQuery"
 export { default as useHighqualityPlaylistQuery } from "./services/useHighqualityPlaylistQuery"
 export { default as usePlaylistTrackAllQuery } from "./services/usePlaylistTrackAllQuery"
@@ -20,3 +19,6 @@ export { default as useSingerHotFiftySongs } from "./services/useSingerHotFiftyS
 export { default as useArtistDetails } from "./services/useArtistDetails"
 export { default as useSingerAlbum } from "./services/useSingerAlbum"
 export { default as useAlbumDetails } from "./services/useAlbumDetails"
+export { default as useNewSongQuery } from "./services/useNewSongQuery"
+export { default as useTopSongQuery } from "./services/useTopSongQuery"
+export { default as useNewDiscsQuery } from "./services/useNewDiscsQuery"
