@@ -1,32 +1,65 @@
 /*
  * @Author: Pacific_D
  * @Date: 2022-07-25 11:41:32
- * @LastEditTime: 2022-07-25 11:42:36
+ * @LastEditTime: 2022-07-28 16:05:55
  * @LastEditors: Pacific_D
  * @Description:
  * @FilePath: \lessMusic\src\components\Playbar\ProgressController\index.tsx
  */
 
-import { Slider, SliderTrack, SliderFilledTrack, Tooltip, SliderThumb } from "@chakra-ui/react"
-import { FC, useState } from "react"
+import { formatPlayTime } from "@/utils"
+import {
+    Slider,
+    SliderTrack,
+    SliderFilledTrack,
+    Tooltip,
+    SliderThumb,
+    Box,
+    Input
+} from "@chakra-ui/react"
+import { useEventListener } from "ahooks"
+import React, { FC, useState, useMemo, useRef } from "react"
+
+interface IProps {
+    currentTime: number
+    duration: number
+    audioRef: React.RefObject<HTMLAudioElement>
+    setIsPlaying: React.Dispatch<React.SetStateAction<boolean>>
+}
 
 /**
- * @description: 音乐播放进度控制器
+ * @description: 音乐进度播放器
  * @return {*}
  */
-const ProgressController: FC = () => {
-    const [isTooltip, setIsTooltip] = useState(false),
-        [sliderValue, setSliderValue] = useState(5)
+const ProgressController: FC<IProps> = ({ currentTime, duration, audioRef, setIsPlaying }) => {
+    const [isTooltip, setIsTooltip] = useState(false)
+
+    const onPress = (v: number) => {
+        audioRef.current!.pause()
+        setIsPlaying(false)
+        audioRef.current!.currentTime = v
+    }
+
+    const onPressEnd = () => {
+        audioRef.current!.play()
+        setIsPlaying(true)
+    }
+
     return (
         <Slider
-            aria-label="slider-ex-4"
-            defaultValue={5}
-            onChange={v => setSliderValue(v)}
+            aria-label="slider"
+            className="progressController"
+            max={duration}
+            min={0}
+            onChange={v => onPress(v)}
+            onChangeEnd={onPressEnd}
             onMouseEnter={() => setIsTooltip(true)}
             onMouseLeave={() => setIsTooltip(false)}
             position="absolute"
-            top={0}
-            transform="translate(0, 50%)"
+            top="0"
+            transform="translate(0, -100%)"
+            value={currentTime}
+            zIndex={1}
         >
             <SliderTrack bg="red.100">
                 <SliderFilledTrack bg="theme.200" />
@@ -36,7 +69,7 @@ const ProgressController: FC = () => {
                 color="black"
                 hasArrow
                 isOpen={isTooltip}
-                label={`${sliderValue}%`}
+                label={formatPlayTime(currentTime)}
                 placement="top"
             >
                 <SliderThumb bg="theme.800" boxSize={3} />

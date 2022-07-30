@@ -1,12 +1,12 @@
 /*
  * @Author: Pacific_D
  * @Date: 2022-07-22 20:26:40
- * @LastEditTime: 2022-07-22 20:38:24
+ * @LastEditTime: 2022-07-29 15:52:42
  * @LastEditors: Pacific_D
  * @Description:
- * @FilePath: \less-music\src\services\services\useHighqualityPlaylistQuery.ts
+ * @FilePath: \lessMusic\src\services\services\useHighqualityPlaylistQuery.ts
  */
-import { METHODS } from "@/types"
+import { METHODS, IRes } from "@/types"
 import { useQuery } from "@tanstack/react-query"
 import request from "../request"
 
@@ -23,11 +23,10 @@ type HighqualityParams = {
  */
 const useHighqualityPlaylistQuery = (params?: HighqualityParams) => {
     const queryKey = ["playlist", "highquality"]
-    const fetchData = () => {
-        return request("/top/playlist/highquality", params ?? {}, METHODS.GET).then(
+    const fetchData = () =>
+        request<IRes>("/top/playlist/highquality", params ?? {}, METHODS.GET).then(
             res => res.data.code === 200 && res.data
         )
-    }
     return useQuery(queryKey, fetchData)
 }
 

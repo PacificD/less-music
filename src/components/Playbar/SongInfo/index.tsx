@@ -1,20 +1,22 @@
 /*
  * @Author: Pacific_D
  * @Date: 2022-07-25 11:44:26
- * @LastEditTime: 2022-07-25 15:13:12
+ * @LastEditTime: 2022-07-28 15:46:38
  * @LastEditors: Pacific_D
  * @Description:
  * @FilePath: \lessMusic\src\components\Playbar\SongInfo\index.tsx
  */
 
+import { Artist } from "@/types"
 import { Box, Image, Flex, Text, useColorModeValue, Center } from "@chakra-ui/react"
 import { FC, useMemo } from "react"
 import { BsArrowsAngleExpand } from "react-icons/bs"
+import { useLocation, useNavigate } from "react-router-dom"
 
 interface IProps {
     cover: string
     name: string
-    singerInfo: string | Array<string>
+    singerInfo: Artist | Array<Artist>
 }
 
 /**
@@ -25,15 +27,28 @@ interface IProps {
  * @return {*}
  */
 const SongInfo: FC<IProps> = ({ cover, name, singerInfo }) => {
-    const singerList: Array<string> = useMemo(
+    const singerList: Array<Artist> = useMemo(
             () => (Array.isArray(singerInfo) ? singerInfo : [singerInfo]),
             [singerInfo]
         ),
-        textColor = useColorModeValue("gray.800", "gray.300")
+        textColor = useColorModeValue("gray.800", "gray.300"),
+        navigate = useNavigate(),
+        location = useLocation()
+
+    const togglePlaying = () => {
+        location.pathname.indexOf("playing") === 1 ? navigate(-1) : navigate("/playing/38689014")
+    }
 
     return (
         <Flex alignItems="center" overflow="hidden" w={80}>
-            <Box cursor="pointer" position="relative" role="group" w={16}>
+            <Box
+                cursor="pointer"
+                onClick={togglePlaying}
+                position="relative"
+                role="group"
+                userSelect="none"
+                w={16}
+            >
                 <Center
                     _groupHover={{ opacity: 1 }}
                     bg="rgba(0,0,0,0.3)"
@@ -56,20 +71,28 @@ const SongInfo: FC<IProps> = ({ cover, name, singerInfo }) => {
                 />
             </Box>
             <Flex alignItems="start" flexDirection="column" justifyContent="center" ml="6" w="full">
-                <Text cursor="pointer" fontSize="16px" fontWeight="bold">
+                <Text
+                    cursor="pointer"
+                    fontSize="16px"
+                    fontWeight="bold"
+                    overflow="hidden"
+                    textOverflow="ellipsis"
+                    w="256px"
+                    whiteSpace="nowrap"
+                >
                     {name}
                 </Text>
                 <Box w="full" whiteSpace="nowrap">
                     {singerList.map((singer, index) => (
-                        <Text
+                        <Box
                             _hover={{ color: "theme.200" }}
                             color={textColor}
                             cursor="pointer"
                             display="inline-block"
                             fontSize="12px"
-                            key={singer}
+                            key={singer.id}
                         >
-                            {singer}
+                            {singer.name}
                             {index === singerList.length - 1 ? (
                                 ""
                             ) : (
@@ -77,7 +100,7 @@ const SongInfo: FC<IProps> = ({ cover, name, singerInfo }) => {
                                     /
                                 </Text>
                             )}
-                        </Text>
+                        </Box>
                     ))}
                 </Box>
             </Flex>

@@ -1,7 +1,7 @@
 /*
  * @Author: Pacific_D
  * @Date: 2022-07-23 10:12:24
- * @LastEditTime: 2022-07-25 17:29:16
+ * @LastEditTime: 2022-07-30 09:40:26
  * @LastEditors: Pacific_D
  * @Description:
  * @FilePath: \less-music\src\style\theme.ts
@@ -14,6 +14,13 @@ const theme = extendTheme({
     initialColorMode: "light",
     useSystemColorMode: false,
     layerStyles: {
+        mainContent: {
+            h: "calc(100vh - 140px)",
+            id: "main-content",
+            overflowX: "hidden",
+            overflowY: "scroll",
+            w: "full"
+        },
         base: {
             bg: "gray.50",
             border: "2px solid",
