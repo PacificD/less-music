@@ -1,59 +1,33 @@
 /*
  * @Author: DZR
  * @Date: 2022-07-20 09:30:50
- * @LastEditTime: 2022-07-25 15:49:20
- * @LastEditors: Ride-pig 327796210@qq.com
+ * @LastEditTime: 2022-07-30 10:31:56
+ * @LastEditors: DZR
  * @Description:
- * @FilePath: \less-music\src\pages\Home\Left\index.tsx
+ * @FilePath: \less-music\src\pages\Home\Main\index.tsx
  */
 
 import { Box, Flex, Center } from "@chakra-ui/react"
 import { FC, useState } from "react"
-import { Attention } from "./Attention"
-import { FindMusic } from "./FindMusic"
-import { Live } from "./Live"
-import { PodCast } from "./PodCast"
-import { PrivateFM } from "./PrivateFM"
-import { Video } from "./Video"
 import "../../../style/main.css"
+import { Outlet, useNavigate } from "react-router-dom"
 
 const Main: FC = () => {
     const [msg, setMsg] = useState(0)
+    const navigate = useNavigate()
 
     const arr = [
-        { id: 0, name: "发现音乐" },
-        { id: 1, name: "播客" },
-        { id: 2, name: "视频" },
-        { id: 3, name: "关注" },
-        { id: 4, name: "直播" },
-        { id: 5, name: "私人FM" }
+        { id: 0, name: "发现音乐", path: "/findmusic/recommendation" },
+        { id: 1, name: "播客", path: "/podcast" },
+        { id: 2, name: "视频", path: "/video" },
+        { id: 3, name: "关注", path: "/attention" },
+        { id: 4, name: "直播", path: "/live" },
+        { id: 5, name: "私人FM", path: "/privatefm" }
     ]
-
-    function changeComponent(params: number): JSX.Element | undefined {
-        switch (params) {
-            case 0:
-                return <FindMusic></FindMusic>
-
-            case 1:
-                return <PodCast></PodCast>
-
-            case 2:
-                return <Video></Video>
-
-            case 3:
-                return <Attention></Attention>
-
-            case 4:
-                return <Live></Live>
-
-            case 5:
-                return <PrivateFM></PrivateFM>
-        }
-    }
 
     return (
         <Center>
-            <Box bg="#fff" borderRight="1px solid lightgray" h="52em" w="19.5em">
+            <Box bg="#fff" borderRight="1px solid lightgray" h="50.5em" w="19.5em">
                 <Flex alignItems="center" flexWrap="wrap" justifyContent="center" rowGap="0.2em">
                     {arr.map(item => (
                         <Box
@@ -61,15 +35,19 @@ const Main: FC = () => {
                             key={item.id}
                             onClick={() => {
                                 setMsg(item.id)
+                                navigate(item.path)
                             }}
                         >
                             {item.name}
+                            {/* {<Link to={item.path as string}>{item.name}</Link>} */}
                         </Box>
                     ))}
                 </Flex>
             </Box>
-            <Box h="52em" w="110.5em">
-                {changeComponent(msg)}
+            <Box h="50.5em" position="relative" w="110.5em">
+                <Box>
+                    <Outlet />
+                </Box>
             </Box>
         </Center>
     )
