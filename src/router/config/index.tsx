@@ -18,10 +18,6 @@ const RouterConfig = () => {
             element: <Home />
         },
         {
-            path: "/",
-            element: <Home />
-        },
-        {
             path: "/login",
             element: <Login />
         },

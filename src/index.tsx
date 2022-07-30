@@ -1,7 +1,7 @@
 /*
  * @Author: Pacific_D
  * @Date: 2022-03-30 21:36:37
- * @LastEditTime: 2022-07-23 10:24:25
+ * @LastEditTime: 2022-07-25 17:30:11
  * @LastEditors: Pacific_D
  * @Description:
  * @FilePath: \less-music\src\index.tsx
@@ -15,7 +15,7 @@ import App from "@/pages/App"
 
 ReactDOM.render(
     <React.StrictMode>
-        <ColorModeScript />
+        <ColorModeScript initialColorMode={theme.config.initialColorMode} />
         <ChakraProvider theme={theme}>
             <BrowserRouter>
                 <App />

@@ -1,18 +1,19 @@
+/*
+ * @Author: Giaruei
+ * @Date: 2022-07-23 09:53:12
+ * @LastEditTime: 2022-07-23 11:57:38
+ * @LastEditors: Pacific_D
+ * @Description:
+ * @FilePath: \less-music\src\pages\NotFound\index.tsx
+ */
 import { Box, Flex, Text } from "@chakra-ui/react"
 import { FC } from "react"
 import { useNavigate } from "react-router-dom"
 
-/*
- * @Author: Giaruei
- * @Date: 2022-07-23 09:53:12
- * @LastEditTime: 2022-07-23 11:29:02
- * @LastEditors: Giaruei
- * @Description:
- * @FilePath: \less-music\src\pages\NotFound\index.tsx
- */
-
 const Error: FC = () => {
     const navigate = useNavigate()
+    const backToMainPage = () => navigate("/")
+
     return (
         <Flex alignItems="center" cursor="default" direction="column" justify="center">
             <Text
@@ -31,9 +32,7 @@ const Error: FC = () => {
                 borderRadius="12px"
                 h="80px"
                 mt="40px"
-                onClick={() => {
-                    navigate("/home")
-                }}
+                onClick={backToMainPage}
                 transition="all .5s"
                 w="300px"
             >
