@@ -1,10 +1,10 @@
 /*
  * @Author: Pacific_D
  * @Date: 2022-07-25 11:41:32
- * @LastEditTime: 2022-07-28 16:05:55
+ * @LastEditTime: 2022-07-30 11:25:43
  * @LastEditors: Pacific_D
  * @Description:
- * @FilePath: \lessMusic\src\components\Playbar\ProgressController\index.tsx
+ * @FilePath: \less-music\src\components\Playbar\ProgressController\index.tsx
  */
 
 import { formatPlayTime } from "@/utils"

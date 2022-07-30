@@ -1,10 +1,10 @@
 /*
  * @Author: Pacific_D
  * @Date: 2022-07-25 16:10:40
- * @LastEditTime: 2022-07-28 11:30:05
+ * @LastEditTime: 2022-07-30 11:25:34
  * @LastEditors: Pacific_D
  * @Description:
- * @FilePath: \lessMusic\src\components\Playbar\MainButton\PauseButton.tsx
+ * @FilePath: \less-music\src\components\Playbar\MainButton\PauseButton.tsx
  */
 
 import { chakra, Circle } from "@chakra-ui/react"

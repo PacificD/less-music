@@ -1,10 +1,10 @@
 /*
  * @Author: Pacific_D
  * @Date: 2022-07-25 11:04:25
- * @LastEditTime: 2022-07-27 17:04:03
+ * @LastEditTime: 2022-07-30 11:26:29
  * @LastEditors: Pacific_D
  * @Description:
- * @FilePath: \lessMusic\src\components\Playbar\VolumeController\index.tsx
+ * @FilePath: \less-music\src\components\Playbar\VolumeController\index.tsx
  */
 
 import {

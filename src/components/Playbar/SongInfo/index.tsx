@@ -1,10 +1,10 @@
 /*
  * @Author: Pacific_D
  * @Date: 2022-07-25 11:44:26
- * @LastEditTime: 2022-07-28 15:46:38
+ * @LastEditTime: 2022-07-30 11:26:16
  * @LastEditors: Pacific_D
  * @Description:
- * @FilePath: \lessMusic\src\components\Playbar\SongInfo\index.tsx
+ * @FilePath: \less-music\src\components\Playbar\SongInfo\index.tsx
  */
 
 import { Artist } from "@/types"

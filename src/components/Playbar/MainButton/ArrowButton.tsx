@@ -1,10 +1,10 @@
 /*
  * @Author: Pacific_D
  * @Date: 2022-07-25 15:29:06
- * @LastEditTime: 2022-07-29 21:29:20
+ * @LastEditTime: 2022-07-30 11:25:20
  * @LastEditors: Pacific_D
  * @Description:
- * @FilePath: \lessMusic\src\components\Playbar\MainButton\ArrowButton.tsx
+ * @FilePath: \less-music\src\components\Playbar\MainButton\ArrowButton.tsx
  */
 import { useHover } from "ahooks"
 import { FC, useMemo, useRef } from "react"

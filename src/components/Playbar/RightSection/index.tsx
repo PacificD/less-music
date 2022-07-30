@@ -1,10 +1,10 @@
 /*
  * @Author: Pacific_D
  * @Date: 2022-07-25 16:26:13
- * @LastEditTime: 2022-07-29 21:24:55
+ * @LastEditTime: 2022-07-30 11:26:00
  * @LastEditors: Pacific_D
  * @Description:
- * @FilePath: \lessMusic\src\components\Playbar\RightSection\index.tsx
+ * @FilePath: \less-music\src\components\Playbar\RightSection\index.tsx
  */
 
 import React, { FC, useState, useMemo } from "react"

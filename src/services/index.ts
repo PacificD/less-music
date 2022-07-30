@@ -1,7 +1,7 @@
 /*
  * @Author: Pacific_D
  * @Date: 2022-07-22 14:21:33
- * @LastEditTime: 2022-07-30 10:35:21
+ * @LastEditTime: 2022-07-30 11:18:41
  * @LastEditors: Pacific_D
  * @Description:
  * @FilePath: \less-music\src\services\index.ts
@@ -14,3 +14,9 @@ export { default as usePlaylistCommentQuery } from "./services/usePlaylistCommen
 export { default as usePlaylistSubscribers } from "./services/usePlaylistSubscribers"
 export { default as useMusicUrlQuery } from "./services/useMusicUrlQuery"
 export { default as useMVDetailQuery } from "./services/useMVDetailQuery"
+export { default as useSinger } from "./services/useSinger"
+export { default as useBanner } from "./services/useBanner"
+export { default as useSingerHotFiftySongs } from "./services/useSingerHotFiftySongs"
+export { default as useArtistDetails } from "./services/useArtistDetails"
+export { default as useSingerAlbum } from "./services/useSingerAlbum"
+export { default as useAlbumDetails } from "./services/useAlbumDetails"

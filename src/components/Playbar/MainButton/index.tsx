@@ -1,10 +1,10 @@
 /*
  * @Author: Pacific_D
  * @Date: 2022-07-25 15:21:40
- * @LastEditTime: 2022-07-29 21:16:09
+ * @LastEditTime: 2022-07-30 11:25:29
  * @LastEditors: Pacific_D
  * @Description:
- * @FilePath: \lessMusic\src\components\Playbar\MainButton\index.tsx
+ * @FilePath: \less-music\src\components\Playbar\MainButton\index.tsx
  */
 
 import { Direction } from "@/types"
