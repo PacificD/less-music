@@ -1,8 +1,8 @@
 /*
  * @Author: Pacific_D
  * @Date: 2022-07-22 17:16:03
- * @LastEditTime: 2022-07-22 20:23:06
- * @LastEditors: Pacific_D
+ * @LastEditTime: 2022-07-26 19:42:15
+ * @LastEditors: Giaruei
  * @Description:
  * @FilePath: \less-music\src\services\services\useHotTopicQuery.ts
  */
@@ -16,7 +16,7 @@ import request from "../request"
  * @param {number} offset
  * @return {*}
  */
-const useHotTopicQuery = (limit = 20, offset = 0) => {
+const useHotTopicQuery = (limit = 30, offset = 0) => {
     const queryKey = ["hotTopic"]
     const fetchData = () => {
         return request(
