@@ -1,0 +1,34 @@
+.isSelected {
+    font-weight: 900;
+    cursor: pointer;
+}
+
+.unSelected {
+    color: "#676767";
+    cursor: pointer;
+}
+
+.image {
+    border-radius: "1em";
+    width: 90px;
+}
+
+.imageNew {
+    width: "10em";
+    height: "10em";
+    cursor: pointer;
+}
+
+.imageNew:hover+.circle {
+    opacity: 1;
+}
+
+.circle {
+    transition: all .5s;
+    cursor: pointer;
+
+}
+
+.circle:hover {
+    opacity: 1;
+}

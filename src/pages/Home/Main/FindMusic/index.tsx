@@ -1,46 +1,83 @@
 /*
- * @Author: Ride-pig 327796210@qq.com
- * @Date: 2022-07-22 15:23:25
+ * @Author: DZR
+ * @Date: 2022-07-22 11:06:37
+ * @LastEditTime: 2022-07-30 10:03:23
  * @LastEditors: Ride-pig 327796210@qq.com
- * @LastEditTime: 2022-07-25 15:13:10
+ * @Description:
  * @FilePath: \less-music\src\pages\Home\Main\FindMusic\index.tsx
- * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
-import { Tab, TabList, TabPanel, TabPanels, Tabs } from "@chakra-ui/react"
-import React, { FC } from "react"
+import { Loading } from "@/components"
+import { Box, Center, Flex, Tab, TabList, TabPanel, TabPanels, Tabs } from "@chakra-ui/react"
+import { Outlet, Link, useNavigate } from "react-router-dom"
+import "../../../../style/index.css"
+// import NewMusic from "./NewMusic/NewSongExpress"
+import Recommendation from "./Recommendation"
 
-export const FindMusic: FC = () => {
+// const FindMusic = () => {
+//     const arrList = ["个性推荐", "专属定制", "歌单", "排行榜", "歌手", "最新音乐"]
+
+//     const arrContent = [
+//         "recommendation",
+//         "design",
+//         "songlist",
+//         "charts",
+//         "singer",
+//         "latestmusic/newsongexpress"
+//     ]
+
+//     return (
+//         <Flex flexWrap="wrap" h="52em" justifyContent="center">
+//             <Flex alignItems="center" h="3em" justifyContent="space-around" w="54em">
+//                 {arrList.map((item: any, index: number) => (
+//                     <Link key={index} to={arrContent[index]}>
+//                         {arrList[index]}
+//                     </Link>
+//                 ))}
+//             </Flex>
+//             <Box h="49.5em" w="100%">
+//                 <Outlet />
+//             </Box>
+//         </Flex>
+//     )
+// }
+
+const FindMusic = () => {
     return (
-        <Tabs>
-            <TabList>
-                <Tab _focus={{ outline: "none" }}>个性推荐</Tab>
-                <Tab _focus={{ outline: "none" }}>专属定制</Tab>
-                <Tab _focus={{ outline: "none" }}>歌单</Tab>
-                <Tab _focus={{ outline: "none" }}>排行榜</Tab>
-                <Tab _focus={{ outline: "none" }}>歌手</Tab>
-                <Tab _focus={{ outline: "none" }}>最新音乐</Tab>
-            </TabList>
-
-            <TabPanels>
-                <TabPanel>
-                    <p>one!</p>
-                </TabPanel>
-                <TabPanel>
-                    <p>two!</p>
-                </TabPanel>
-                <TabPanel>
-                    <p>three!</p>
-                </TabPanel>
-                <TabPanel>
-                    <p>four!</p>
-                </TabPanel>
-                <TabPanel>
-                    <p>five!</p>
-                </TabPanel>
-                <TabPanel>
-                    <p>six!</p>
-                </TabPanel>
-            </TabPanels>
-        </Tabs>
+        <Box bg="white" h="52em">
+            <Center>
+                     
+                <Link className="recommendationLink" to="recommendation">
+                                        个性推荐              
+                </Link>
+                               
+                <Link className="recommendationLink" to="">
+                                        专属定制                
+                </Link>
+                           
+                <Link className="recommendationLink" to="">
+                                        歌单              
+                </Link>
+                               
+                <Link className="recommendationLink" to="">
+                                        排行榜              
+                </Link>
+                             
+                <Link className="recommendationLink" to="singer/picture">
+                                        歌手            
+                </Link>
+                             
+                <Link className="recommendationLink" to="latestmusic/newsongexpress">
+                                        最新音乐              
+                </Link>
+                         
+            </Center>
+                       
+            <Box>
+                                <Outlet />       
+            </Box>
+                   
+        </Box>
     )
 }
+
+export default FindMusic

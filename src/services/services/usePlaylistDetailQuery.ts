@@ -1,8 +1,8 @@
 /*
  * @Author: Pacific_D
  * @Date: 2022-07-22 20:08:10
- * @LastEditTime: 2022-07-26 11:47:59
- * @LastEditors: Giaruei
+ * @LastEditTime: 2022-07-22 21:12:28
+ * @LastEditors: Pacific_D
  * @Description:
  * @FilePath: \less-music\src\services\services\usePlaylistDetailQuery.ts
  */
@@ -18,16 +18,15 @@ import request from "../request"
  */
 const usePlaylistDetailQuery = (id: number, enabled = false) => {
     const queryKey = ["playlist", "detail", id]
-    const fetchData = async () => {
-        const res = await request(
+    const fetchData = () => {
+        return request(
             "/playlist/detail",
             {
                 id,
                 cookie: cookie
             },
             METHODS.GET
-        )
-        return res.data.code === 200 && res.data
+        ).then(res => res.data.code === 200 && res.data)
     }
 
     return useQuery(queryKey, fetchData, { enabled })

@@ -1,8 +1,8 @@
 /*
  * @Author: Pacific_D
  * @Date: 2022-07-22 20:26:40
- * @LastEditTime: 2022-07-28 11:05:24
- * @LastEditors: Giaruei
+ * @LastEditTime: 2022-07-22 20:38:24
+ * @LastEditors: Pacific_D
  * @Description:
  * @FilePath: \less-music\src\services\services\useHighqualityPlaylistQuery.ts
  */
@@ -23,9 +23,10 @@ type HighqualityParams = {
  */
 const useHighqualityPlaylistQuery = (params?: HighqualityParams) => {
     const queryKey = ["playlist", "highquality"]
-    const fetchData = async () => {
-        const res = await request("/top/playlist/highquality", params ?? {}, METHODS.GET)
-        return res.data.code === 200 && res.data
+    const fetchData = () => {
+        return request("/top/playlist/highquality", params ?? {}, METHODS.GET).then(
+            res => res.data.code === 200 && res.data
+        )
     }
     return useQuery(queryKey, fetchData)
 }
