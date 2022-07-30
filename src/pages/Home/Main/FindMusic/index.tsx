@@ -1,8 +1,8 @@
 /*
  * @Author: DZR
  * @Date: 2022-07-22 11:06:37
- * @LastEditTime: 2022-07-30 10:27:56
- * @LastEditors: DZR
+ * @LastEditTime: 2022-07-30 11:29:45
+ * @LastEditors: Pacific_D
  * @Description:
  * @FilePath: \less-music\src\pages\Home\Main\FindMusic\index.tsx
  */
@@ -20,7 +20,7 @@ const FindMusic = () => {
                 <Link className="recommendationLink" to="">
                     专属定制
                 </Link>
-                <Link className="recommendationLink" to="">
+                <Link className="recommendationLink" to="playlist">
                     歌单
                 </Link>
                 <Link className="recommendationLink" to="">
