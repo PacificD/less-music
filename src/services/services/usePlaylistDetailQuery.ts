@@ -1,10 +1,10 @@
 /*
  * @Author: Pacific_D
  * @Date: 2022-07-22 20:08:10
- * @LastEditTime: 2022-07-29 15:54:59
+ * @LastEditTime: 2022-07-30 10:31:53
  * @LastEditors: Pacific_D
  * @Description:
- * @FilePath: \lessMusic\src\services\services\usePlaylistDetailQuery.ts
+ * @FilePath: \less-music\src\services\services\usePlaylistDetailQuery.ts
  */
 import { IRes, METHODS } from "@/types"
 import { useQuery } from "@tanstack/react-query"
