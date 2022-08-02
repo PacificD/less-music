@@ -1,8 +1,8 @@
 /*
  * @Author: Giaruei
  * @Date: 2022-07-25 15:24:11
- * @LastEditTime: 2022-07-30 11:31:23
- * @LastEditors: Pacific_D
+ * @LastEditTime: 2022-07-30 15:53:06
+ * @LastEditors: Giaruei
  * @Description: 歌单的详情页面
  * @FilePath: \less-music\src\pages\Playlist\index.tsx
  */
@@ -93,7 +93,7 @@ const Playlist: FC<IProps> = ({ playlistId }) => {
     const [state, setState] = useState(0)
 
     return (
-        <Grid mb="70px" overflowX="hidden" w="full">
+        <Grid mb="70px" overflow="scroll" w="full">
             <PlaylistDetail
                 detailIsLoading={detailIsLoading}
                 playlist={playlist}

@@ -1,10 +1,10 @@
 /*
  * @Author: Pacific_D
  * @Date: 2022-07-25 20:58:33
- * @LastEditTime: 2022-07-29 16:27:52
- * @LastEditors: Pacific_D
+ * @LastEditTime: 2022-07-30 12:09:30
+ * @LastEditors: Giaruei
  * @Description:
- * @FilePath: \lessMusic\src\pages\MV\index.tsx
+ * @FilePath: \less-music\src\pages\MV\index.tsx
  */
 import { useMVDetailQuery } from "@/services"
 import { MVDetail, Resolution } from "@/types"
