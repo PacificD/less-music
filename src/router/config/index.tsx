@@ -1,8 +1,8 @@
 /*
  * @Author: Pacific_D
  * @Date: 2022-07-19 10:16:22
- * @LastEditTime: 2022-08-04 11:06:05
- * @LastEditors: DZR
+ * @LastEditTime: 2022-08-04 11:39:59
+ * @LastEditors: Pacific_D
  * @Description:
  * @FilePath: \less-music\src\router\config\index.tsx
  */
@@ -26,14 +26,38 @@ import {
     PrivateFM,
     Playing
 } from "@/pages"
+import { Password } from "@/pages/Login/password"
+import { QrCode } from "@/pages/Login/qrCode"
 import { Navigate, useRoutes } from "react-router-dom"
 
 // 当路由结构复杂时，考虑重构为扁平化配置
 const RouterConfig = () => {
     return useRoutes([
         {
+            path: "*",
+            element: <NotFound />
+        },
+        {
+            path: "/playing/:id",
+            element: <Playing />
+        },
+        {
+            path: "/login",
+            element: <Login />,
+            children: [
+                {
+                    path: "qrcode",
+                    element: <QrCode />
+                },
+                {
+                    path: "password",
+                    element: <Password />
+                }
+            ]
+        },
+        {
             path: "/",
-            element: <Navigate to="/findmusic/recommendation" />
+            element: <Navigate to="findmusic/recommendation" />
         },
         {
             path: "/",
@@ -92,23 +116,6 @@ const RouterConfig = () => {
                     element: <MVdetails />
                 }
             ]
-        },
-
-        {
-            path: "/login",
-            element: <Navigate to="/login/qrcode" />
-        },
-        {
-            path: "/login",
-            element: <Login />
-        },
-        {
-            path: "*",
-            element: <NotFound />
-        },
-        {
-            path: "/playing/:id",
-            element: <Playing />
         }
     ])
 }

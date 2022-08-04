@@ -2,10 +2,11 @@
  * @Author: Ride-pig 327796210@qq.com
  * @Date: 2022-07-25 20:41:56
  * @LastEditors: Ride-pig 327796210@qq.com
- * @LastEditTime: 2022-07-29 21:12:12
+ * @LastEditTime: 2022-07-30 16:55:12
  * @FilePath: \less-music\src\pages\Home\Main\FindMusic\NewMusci\index.tsx
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
+import { useCtxValue } from "@/hooks"
 import { useTopSongQuery } from "@/services"
 import { IRes } from "@/types"
 import { Box, Center, Circle, Flex } from "@chakra-ui/react"
@@ -38,6 +39,20 @@ export const NewSongExpress = () => {
             return "0" + minutes + ":" + seconds
         }
     }
+    // console.log(formatDuring(1659110400000))
+
+    // 引入封装的播放音乐的hooks
+    const { playMusic } = useCtxValue()
+
+    const play = (item: any) => {
+        playMusic({
+            id: item.id,
+            name: item.name,
+            cover: item.album.picUrl,
+            duration: item.duration,
+            artists: item.artists
+        })
+    }
 
     return (
         <Box display="flex" flexWrap="wrap" h="30em" justifyContent="center">
@@ -58,6 +73,7 @@ export const NewSongExpress = () => {
                         justifyContent="center"
                         key={index}
                         marginTop="1em"
+                        onClick={() => play(item)}
                         transition="all .3s"
                         width="86em"
                     >
@@ -98,9 +114,12 @@ export const NewSongExpress = () => {
                             w="18em"
                             whiteSpace="nowrap"
                         >
-                            {item.artists[1]
-                                ? item.artists[0].name + "/" + item.artists[1].name
-                                : item.artists[0].name}
+                            {item.artists.map((singer: any, index: number) => (
+                                <Box display="inline-block" key={singer}>
+                                    {singer.name}
+                                    {index === item.artists.length - 1 ? "" : "/"}
+                                </Box>
+                            ))}
                         </Box>
                         <Box
                             fontSize="0.875em"

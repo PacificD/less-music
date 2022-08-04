@@ -1,9 +1,9 @@
 /*
  * @Author: Ride-pig 327796210@qq.com
  * @Date: 2022-08-01 16:21:32
- * @LastEditors: Ride-pig 327796210@qq.com
- * @LastEditTime: 2022-08-03 17:41:18
- * @FilePath: \整合\less-music\src\services\services\useEmailLoginQuery.ts
+ * @LastEditors: Pacific_D
+ * @LastEditTime: 2022-08-04 11:41:18
+ * @FilePath: \less-music\src\services\services\usePhoneLoginQuery.ts
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
 import { IRes, METHODS } from "@/types"
