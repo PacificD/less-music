@@ -1,8 +1,8 @@
 /*
  * @Author: DZR
  * @Date: 2022-07-28 11:23:12
- * @LastEditTime: 2022-07-30 11:20:27
- * @LastEditors: Pacific_D
+ * @LastEditTime: 2022-08-02 14:39:38
+ * @LastEditors: DZR
  * @Description:
  * @FilePath: \less-music\src\services\services\useSingerHotFiftySongs.ts
  */
@@ -11,7 +11,7 @@ import { useQuery } from "@tanstack/react-query"
 import request from "../request"
 /**
  * @description: 获取歌手热门50首歌曲
- * @param {number}id:歌手id
+ * @param {number} id 歌手id
  * @return {*}
  */
 type param = {

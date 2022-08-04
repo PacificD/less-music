@@ -1,8 +1,8 @@
 /*
  * @Author: Pacific_D
  * @Date: 2022-07-18 10:14:40
- * @LastEditTime: 2022-07-30 11:23:32
- * @LastEditors: Pacific_D
+ * @LastEditTime: 2022-08-03 10:39:04
+ * @LastEditors: DZR
  * @Description:
  * @FilePath: \less-music\src\pages\App.tsx
  */
@@ -56,7 +56,7 @@ const App: FC = () => {
         <QueryClientProvider client={queryClient}>
             <ctx.Provider value={{ playingMusic, playlist, playlistDispatch, playMusic }}>
                 <Box position="relative">
-                    <GoBack />
+                    {/* <GoBack /> */}
                     {useMemo(
                         () => (
                             <ViewRouter />

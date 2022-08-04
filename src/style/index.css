@@ -316,15 +316,56 @@ body {
     width: 2px;
     height: 1em;
     background-color: lightgray;
-    margin: 5px 5px 5px 10px;
+    margin: 5px 10px;
 }
-.topFiftySong {
+.topFiftySong{
     position: relative;
     height: 30px;
     padding: 4px 10px;
+}
+.topFiftySong:hover{
+    background-color: rgb(233, 233, 233);
 }
 .heartIcon {
     margin: 4px 10px 4px 5px;
     color: gray;
     cursor: pointer;
+}
+.singerPageLink{
+    margin: 0 10px;
+}
+.singersDetails{
+    white-space: pre-wrap;
+}
+.MVbutton{
+    width: 100px;
+    height: 30px;
+    border: 1px solid gray;
+    text-align: center;
+    justify-content: center;
+    border-radius: 20px;
+    margin: 20px 5px;
+}
+.playingAlbum{
+    animation: playingAlbum 10s linear infinite;
+    -webkit-animation: playingAlbum 10s linear infinite;
+    background-color: lightgray;
+}
+@keyframes playingAlbum {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes playingAlbum {
+    0% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }

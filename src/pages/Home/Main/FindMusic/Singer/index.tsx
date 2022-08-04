@@ -1,21 +1,20 @@
 /*
  * @Author: DZR
  * @Date: 2022-07-22 17:48:07
- * @LastEditTime: 2022-07-30 11:37:54
- * @LastEditors: Pacific_D
+ * @LastEditTime: 2022-08-02 16:45:09
+ * @LastEditors: DZR
  * @Description:
  * @FilePath: \less-music\src\pages\Home\Main\FindMusic\Singer\index.tsx
  */
-import { useSinger } from "@/services"
-import { useSingerHotFiftySongs } from "@/services"
-import { IRes } from "@/types"
-import { Box, Flex, Text, Image } from "@chakra-ui/react"
-import { Link, Outlet, Route, Routes } from "react-router-dom"
-import { FC, useMemo } from "react"
-import SingerClassify from "./SingerClassify"
+import { Box } from "@chakra-ui/react"
+import { Route, Routes } from "react-router-dom"
+import { FC } from "react"
 import "../../../../../style/index.css"
 import SingerPicture from "./SingerPicture"
-import SingerPage from "./SingerPage/SingerPage"
+import SingerPage from "./SingerPage"
+import Album from "./SingerPage/Album"
+import { MV } from "@/pages"
+import MVdetails from "./SingerPage/MVdetails"
 
 const Singer: FC = () => {
     return (
@@ -24,7 +23,6 @@ const Singer: FC = () => {
                 <Route element={<SingerPicture />} path="/picture"></Route>
                 <Route element={<SingerPage />} path="/page"></Route>
             </Routes>
-            {/* <SingerPage /> */}
         </Box>
     )
 }

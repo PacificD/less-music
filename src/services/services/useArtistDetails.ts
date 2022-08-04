@@ -1,8 +1,8 @@
 /*
  * @Author: DZR
  * @Date: 2022-07-29 13:32:26
- * @LastEditTime: 2022-07-30 11:19:52
- * @LastEditors: Pacific_D
+ * @LastEditTime: 2022-08-02 11:26:04
+ * @LastEditors: DZR
  * @Description:
  * @FilePath: \less-music\src\services\services\useArtistDetails.ts
  */
@@ -17,7 +17,6 @@ import request from "../request"
  */
 type param = {
     id: number
-    cookie: string
 }
 const useArtistDetails = (Param: param) => {
     const queryKey = ["artist", "detail"]

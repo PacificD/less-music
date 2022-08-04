@@ -1,7 +1,7 @@
 /*
  * @Author: DZR
  * @Date: 2022-07-20 09:30:50
- * @LastEditTime: 2022-07-30 10:31:56
+ * @LastEditTime: 2022-08-02 10:34:54
  * @LastEditors: DZR
  * @Description:
  * @FilePath: \less-music\src\pages\Home\Main\index.tsx
@@ -39,7 +39,6 @@ const Main: FC = () => {
                             }}
                         >
                             {item.name}
-                            {/* {<Link to={item.path as string}>{item.name}</Link>} */}
                         </Box>
                     ))}
                 </Flex>
