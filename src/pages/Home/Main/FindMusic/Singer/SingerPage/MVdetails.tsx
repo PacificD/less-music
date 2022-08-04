@@ -1,7 +1,7 @@
 /*
  * @Author: DZR
  * @Date: 2022-08-02 16:29:08
- * @LastEditTime: 2022-08-03 20:52:58
+ * @LastEditTime: 2022-08-04 17:35:31
  * @LastEditors: DZR
  * @Description: MV播放页面详情
  * @FilePath: \less-music\src\pages\Home\Main\FindMusic\Singer\SingerPage\MVdetails.tsx
@@ -48,7 +48,6 @@ const MVdetails = () => {
                             MV详情
                         </Text>
                         {mvCommentsIsLoading ? <Box>loading</Box> : <MV />}
-                        {/* {window.location.reload()} */}
                         <Flex>
                             <Circle mt="10px" overflow="hidden" size="3em">
                                 {imgUrl === "" ? <Box></Box> : <Image h="3em" src={imgUrl} />}

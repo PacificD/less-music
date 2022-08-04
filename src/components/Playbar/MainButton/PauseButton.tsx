@@ -1,8 +1,8 @@
 /*
  * @Author: Pacific_D
  * @Date: 2022-07-25 16:10:40
- * @LastEditTime: 2022-07-30 11:25:34
- * @LastEditors: Pacific_D
+ * @LastEditTime: 2022-08-04 19:36:18
+ * @LastEditors: DZR
  * @Description:
  * @FilePath: \less-music\src\components\Playbar\MainButton\PauseButton.tsx
  */
@@ -28,9 +28,9 @@ interface IProps {
 const PauseButton: FC<IProps> = ({ audioRef, isPlaying, togglePlaying }) => {
     return (
         <Circle
-            _hover={{ borderColor: "theme.400" }}
+            _hover={{ borderColor: "#2b6cb0" }}
             border="1px"
-            borderColor="theme.200"
+            borderColor="#2b6cb0"
             cursor="pointer"
             onClick={togglePlaying}
             role="group"
@@ -39,12 +39,12 @@ const PauseButton: FC<IProps> = ({ audioRef, isPlaying, togglePlaying }) => {
         >
             {isPlaying ? (
                 <CRiPauseMiniFill
-                    _groupHover={{ color: "theme.400" }}
-                    color="theme.200"
+                    _groupHover={{ color: "#2b6cb0" }}
+                    color="#2b6cb0"
                     fontSize={26}
                 />
             ) : (
-                <CRiPlayFill _groupHover={{ color: "theme.400" }} color="theme.200" fontSize={26} />
+                <CRiPlayFill _groupHover={{ color: "#2b6cb0" }} color="#2b6cb0" fontSize={26} />
             )}
         </Circle>
     )

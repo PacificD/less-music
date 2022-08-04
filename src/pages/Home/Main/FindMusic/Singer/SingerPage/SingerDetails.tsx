@@ -1,7 +1,7 @@
 /*
  * @Author: DZR
  * @Date: 2022-07-29 17:04:21
- * @LastEditTime: 2022-08-02 20:36:36
+ * @LastEditTime: 2022-08-04 15:55:51
  * @LastEditors: DZR
  * @Description: 歌手详情页中的歌手详情组件
  * @FilePath: \less-music\src\pages\Home\Main\FindMusic\Singer\SingerPage\SingerDetails.tsx
@@ -58,10 +58,10 @@ const SingerDetails = () => {
             ) : (
                 descDetails.map((item: any, index: number) => {
                     return (
-                        <Text className="singersDetails" key={index} marginBottom="40px">
+                        <Box className="singersDetails" key={index} marginBottom="40px">
                             <Text marginBottom="13px">{Ti[index]}</Text>
                             <Text color="gray">{Txt[index]}</Text>
-                        </Text>
+                        </Box>
                     )
                 })
             )}

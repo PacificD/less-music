@@ -1,9 +1,9 @@
 /*
  * @Author: Ride-pig 327796210@qq.com
  * @Date: 2022-07-25 20:41:56
- * @LastEditors: Ride-pig 327796210@qq.com
- * @LastEditTime: 2022-07-30 16:55:12
- * @FilePath: \less-music\src\pages\Home\Main\FindMusic\NewMusci\index.tsx
+ * @LastEditors: DZR
+ * @LastEditTime: 2022-08-04 16:07:02
+ * @FilePath: \less-music\src\pages\Home\Main\FindMusic\LatestMusic\NewSongExpress\index.tsx
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
 import { useCtxValue } from "@/hooks"
@@ -71,7 +71,7 @@ export const NewSongExpress = () => {
                         display="flex"
                         height="5.625em"
                         justifyContent="center"
-                        key={index}
+                        key={item.id}
                         marginTop="1em"
                         onClick={() => play(item)}
                         transition="all .3s"
@@ -115,7 +115,7 @@ export const NewSongExpress = () => {
                             whiteSpace="nowrap"
                         >
                             {item.artists.map((singer: any, index: number) => (
-                                <Box display="inline-block" key={singer}>
+                                <Box display="inline-block" key={singer.name}>
                                     {singer.name}
                                     {index === item.artists.length - 1 ? "" : "/"}
                                 </Box>

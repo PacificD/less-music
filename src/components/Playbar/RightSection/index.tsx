@@ -1,8 +1,8 @@
 /*
  * @Author: Pacific_D
  * @Date: 2022-07-25 16:26:13
- * @LastEditTime: 2022-08-01 15:12:06
- * @LastEditors: Giaruei
+ * @LastEditTime: 2022-08-04 19:30:41
+ * @LastEditors: DZR
  * @Description:
  * @FilePath: \less-music\src\components\Playbar\RightSection\index.tsx
  */
@@ -67,7 +67,7 @@ const CRiPlayListFill = chakra(RiPlayListFill),
     CFaRandom = chakra(FaRandom),
     CBsFillTrashFill = chakra(BsFillTrashFill),
     iconProperty = {
-        _hover: { color: "theme.200" },
+        _hover: { color: "#2b6cb0" },
         cursor: "pointer",
         fontSize: "20"
     },

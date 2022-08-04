@@ -1,10 +1,10 @@
 /*
  * @Author: Pacific_D
  * @Date: 2022-07-29 19:37:32
- * @LastEditTime: 2022-07-29 20:33:56
- * @LastEditors: Pacific_D
+ * @LastEditTime: 2022-08-04 19:32:18
+ * @LastEditors: DZR
  * @Description:
- * @FilePath: \lessMusic\src\components\Playbar\RightSection\PlaylistItem.tsx
+ * @FilePath: \less-music\src\components\Playbar\RightSection\PlaylistItem.tsx
  */
 import { useCtxValue } from "@/hooks"
 import { PlayingMusic } from "@/types"
@@ -49,9 +49,9 @@ const PlaylistItem: FC<IProps> = ({ index, music, isPlaying }) => {
             p="0 4px 0 16px"
             w="full"
         >
-            <Text color={isPlaying ? "theme.200" : ""}>{index}.</Text>
+            <Text color={isPlaying ? "#2b6cb0" : ""}>{index}.</Text>
             <Text
-                color={isPlaying ? "theme.200" : ""}
+                color={isPlaying ? "#2b6cb0" : ""}
                 overflow="hidden"
                 textAlign="center"
                 textOverflow="ellipsis"
@@ -61,7 +61,7 @@ const PlaylistItem: FC<IProps> = ({ index, music, isPlaying }) => {
                 {music.name}
             </Text>
             <Text
-                color={isPlaying ? "theme.200" : ""}
+                color={isPlaying ? "#2b6cb0" : ""}
                 overflow="hidden"
                 textAlign="center"
                 textOverflow="ellipsis"
@@ -72,10 +72,10 @@ const PlaylistItem: FC<IProps> = ({ index, music, isPlaying }) => {
                     index === music.artists.length - 1 ? artist.name : artist.name + ","
                 )}
             </Text>
-            <Text color={isPlaying ? "theme.200" : ""}>{calculateDuration(music.duration)}</Text>
+            <Text color={isPlaying ? "#2b6cb0" : ""}>{calculateDuration(music.duration)}</Text>
             <CBsFillTrashFill
                 _hover={{ color: "blue.300" }}
-                color={isPlaying ? "theme.200" : "gray.500"}
+                color={isPlaying ? "#2b6cb0" : "gray.500"}
                 cursor="pointer"
                 onClick={(e: React.MouseEvent) => deleteFromPlaylist(e)}
             />

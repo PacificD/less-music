@@ -1,8 +1,8 @@
 /*
  * @Author: DZR
  * @Date: 2022-07-20 09:30:50
- * @LastEditTime: 2022-08-04 11:45:20
- * @LastEditors: Pacific_D
+ * @LastEditTime: 2022-08-04 19:25:58
+ * @LastEditors: DZR
  * @Description:
  * @FilePath: \less-music\src\pages\Home\Main\index.tsx
  */
@@ -40,7 +40,7 @@ const Main: FC = () => {
                                 setLastMsg(lastMsg)
                                 setMsg(item.id)
                                 navigate(item.path)
-                                console.log(lastMsg)
+                                //console.log(lastMsg)
                             }}
                         >
                             {item.name}

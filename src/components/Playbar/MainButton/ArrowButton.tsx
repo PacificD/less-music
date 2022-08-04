@@ -1,8 +1,8 @@
 /*
  * @Author: Pacific_D
  * @Date: 2022-07-25 15:29:06
- * @LastEditTime: 2022-07-30 11:25:20
- * @LastEditors: Pacific_D
+ * @LastEditTime: 2022-08-04 19:38:55
+ * @LastEditors: DZR
  * @Description:
  * @FilePath: \less-music\src\components\Playbar\MainButton\ArrowButton.tsx
  */
@@ -43,9 +43,9 @@ const Arrow: FC<IProps> = ({ direction, playNextOrPrev }) => {
 
     return (
         <Circle
-            _hover={{ borderColor: "theme.400" }}
+            _hover={{ borderColor: "#2b6cb0" }}
             border="1px"
-            borderColor="theme.200"
+            borderColor="#2b6cb0"
             onClick={play}
             padding={1}
             shadow={buttonShadow}
@@ -69,7 +69,7 @@ const Arrow: FC<IProps> = ({ direction, playNextOrPrev }) => {
                 </defs>
                 <path
                     d="M364.302083 465.602819L687.954365 218.588294c38.416414-29.327534 93.791393-1.929039 93.791392 46.396277v494.029051c0 48.325316-55.374979 75.725617-93.791392 46.398084L364.302083 558.397181c-30.600916-23.357989-30.600916-69.436372 0-92.794362zM238.945254 780.798397V451.684117v-164.562559c0-19.628152-5.904521-60.475733 17.057907-75.841215 25.523642-17.068744 59.747828 1.210165 59.747828 31.919454v493.676839c0 19.628152 5.915358 60.473927-17.047069 75.841215-25.53448 17.068744-59.758666-1.211971-59.758666-31.919454z"
-                    fill={isHovering ? colors.theme[400] : colors.theme[200]}
+                    fill={isHovering ? "#2b6cb0" : "#2b6cb0"}
                     p-id="1904"
                 ></path>
             </svg>

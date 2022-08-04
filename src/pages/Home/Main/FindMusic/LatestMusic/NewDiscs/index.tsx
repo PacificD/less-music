@@ -1,9 +1,9 @@
 /*
  * @Author: Ride-pig 327796210@qq.com
  * @Date: 2022-07-29 10:42:38
- * @LastEditors: Ride-pig
- * @LastEditTime: 2022-08-04 10:44:04
- * @FilePath: \整合\less-music\src\pages\Home\Main\FindMusic\LatestMusic\NewDiscs\index.tsx
+ * @LastEditors: DZR
+ * @LastEditTime: 2022-08-04 16:06:32
+ * @FilePath: \less-music\src\pages\Home\Main\FindMusic\LatestMusic\NewDiscs\index.tsx
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
 import { LoadingTwo } from "@/components"
@@ -62,7 +62,7 @@ export const NewDiscs = () => {
                     </Box>
                 ) : (
                     newDiscsResult.map((item: any, index: number) => (
-                        <Box h="16em" key={index} w="10em">
+                        <Box h="16em" key={item.id} w="10em">
                             <Center h="10em" position="relative" w="10em">
                                 <Images
                                     className="imageNew"

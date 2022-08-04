@@ -1,7 +1,7 @@
 /*
  * @Author: DZR
  * @Date: 2022-07-30 15:49:51
- * @LastEditTime: 2022-08-04 10:31:50
+ * @LastEditTime: 2022-08-04 17:11:23
  * @LastEditors: DZR
  * @Description: 歌手详情页中的专辑页面（热门50首歌下的专辑组件）
  * @FilePath: \less-music\src\pages\Home\Main\FindMusic\Singer\SingerPage\AlbumList.tsx
@@ -21,7 +21,7 @@ const AlbumList = (props: any) => {
     const { data: albumDetails, isLoading: albumIsLoading } = useAlbumDetails(props.msg)
     const Albums = useMemo(() => {
         if (albumDetails) {
-            console.log((albumDetails as IRes).albums)
+            //console.log((albumDetails as IRes).albums)
             return (albumDetails as IRes).albums
         }
     }, [albumDetails])
@@ -46,7 +46,7 @@ const AlbumList = (props: any) => {
                     return (
                         <Flex key={index} mt="50px">
                             <Box fontSize={20} h="170px" w="190px">
-                                <Image sizes="100%" src={item.album.blurPicUrl}></Image>
+                                <Image sizes="100%" src={item.album.blurPicUrl} />
                             </Box>
                             <Box ml="70px" w="100%">
                                 <Flex>

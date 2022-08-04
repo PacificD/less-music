@@ -1,8 +1,8 @@
 /*
  * @Author: DZR
  * @Date: 2022-07-28 16:44:18
- * @LastEditTime: 2022-08-04 10:03:28
- * @LastEditors: Giaruei
+ * @LastEditTime: 2022-08-04 17:42:06
+ * @LastEditors: DZR
  * @Description:
  * @FilePath: \less-music\src\pages\Home\Main\FindMusic\Singer\SingerPicture.tsx
  */
@@ -37,6 +37,7 @@ const SingerPicture = () => {
                                     <Box key={item.id}>
                                         <Image
                                             alt="singerPicture"
+                                            borderRadius="5px"
                                             cursor="pointer"
                                             h="150px"
                                             margin="9px"

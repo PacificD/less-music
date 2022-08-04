@@ -1,8 +1,8 @@
 /*
  * @Author: Pacific_D
  * @Date: 2022-07-25 11:41:32
- * @LastEditTime: 2022-07-30 11:25:43
- * @LastEditors: Pacific_D
+ * @LastEditTime: 2022-08-04 19:33:45
+ * @LastEditors: DZR
  * @Description:
  * @FilePath: \less-music\src\components\Playbar\ProgressController\index.tsx
  */
@@ -61,8 +61,8 @@ const ProgressController: FC<IProps> = ({ currentTime, duration, audioRef, setIs
             value={currentTime}
             zIndex={1}
         >
-            <SliderTrack bg="red.100">
-                <SliderFilledTrack bg="theme.200" />
+            <SliderTrack bg="lightgray">
+                <SliderFilledTrack bg="#2b6cb0" />
             </SliderTrack>
             <Tooltip
                 bg="gray.100"
@@ -72,7 +72,7 @@ const ProgressController: FC<IProps> = ({ currentTime, duration, audioRef, setIs
                 label={formatPlayTime(currentTime)}
                 placement="top"
             >
-                <SliderThumb bg="theme.800" boxSize={3} />
+                <SliderThumb bg="#2b6cb0" boxSize={3} />
             </Tooltip>
         </Slider>
     )

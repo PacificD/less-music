@@ -1,7 +1,7 @@
 /*
  * @Author: DZR
  * @Date: 2022-07-29 17:02:30
- * @LastEditTime: 2022-08-04 10:30:59
+ * @LastEditTime: 2022-08-04 17:29:47
  * @LastEditors: DZR
  * @Description:歌手详情页中的专辑页面（显示热门50首歌的组件）
  * @FilePath: \less-music\src\pages\Home\Main\FindMusic\Singer\SingerPage\Album.tsx
@@ -32,7 +32,7 @@ const Album = () => {
     const { data: songs, isLoading: songsIsloading } = useSingerHotFiftySongs({ id: msg.id })
     const Details = useMemo(() => {
         if (songs) {
-            console.log(songs.songs)
+            //console.log(songs.songs)
             return songs.songs
         }
     }, [songs])
@@ -51,7 +51,13 @@ const Album = () => {
     return (
         <Box>
             <Flex>
-                <Box fontSize={20} h="170px" w="190px"></Box>
+                <Box fontSize={20} h="170px" w="190px">
+                    <Image
+                        borderRadius="5px"
+                        sizes="100%"
+                        src="https://s1.ax1x.com/2022/08/04/veqDG4.png"
+                    />
+                </Box>
                 <Box ml="70px" w="100%">
                     <Flex>
                         <Text fontWeight="bold" mr="20px">

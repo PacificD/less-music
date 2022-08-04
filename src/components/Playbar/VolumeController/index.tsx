@@ -1,8 +1,8 @@
 /*
  * @Author: Pacific_D
  * @Date: 2022-07-25 11:04:25
- * @LastEditTime: 2022-07-30 11:26:29
- * @LastEditors: Pacific_D
+ * @LastEditTime: 2022-08-04 19:29:12
+ * @LastEditors: DZR
  * @Description:
  * @FilePath: \less-music\src\components\Playbar\VolumeController\index.tsx
  */
@@ -73,14 +73,14 @@ const VolumeController: FC<IProps> = ({ width, audioRef }) => {
             <Box onClick={toggleSound}>
                 {volume.current === 0 ? (
                     <CFiVolumeX
-                        _hover={{ color: "theme.200" }}
+                        _hover={{ color: "#2b6cb0" }}
                         color={iconColor}
                         cursor="pointer"
                         fontSize="24"
                     />
                 ) : (
                     <CFiVolume2
-                        _hover={{ color: "theme.200" }}
+                        _hover={{ color: "#2b6cb0" }}
                         color={iconColor}
                         cursor="pointer"
                         fontSize="24"
@@ -95,8 +95,8 @@ const VolumeController: FC<IProps> = ({ width, audioRef }) => {
                 onMouseLeave={() => setIsTooltip(false)}
                 value={volume.current}
             >
-                <SliderTrack bg="red.100">
-                    <SliderFilledTrack bg="theme.400" />
+                <SliderTrack bg="lightgray">
+                    <SliderFilledTrack bg="#2b6cb0" />
                 </SliderTrack>
                 <Tooltip
                     bg="gray.100"
@@ -107,7 +107,7 @@ const VolumeController: FC<IProps> = ({ width, audioRef }) => {
                     placement="top"
                 >
                     <SliderThumb bg="gray.100" boxSize={5}>
-                        <Box as={MdGraphicEq} color="tomato" />
+                        <Box as={MdGraphicEq} color="#2b6cb0" />
                     </SliderThumb>
                 </Tooltip>
             </Slider>

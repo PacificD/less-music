@@ -1,56 +1,64 @@
 /*
  * @Author: DZR
  * @Date: 2022-07-23 11:00:44
- * @LastEditTime: 2022-07-30 16:10:46
- * @LastEditors: Giaruei
- * @Description:
+ * @LastEditTime: 2022-08-04 19:59:47
+ * @LastEditors: DZR
+ * @Description:轮播图
  * @FilePath: \less-music\src\pages\Home\Main\FindMusic\Recommendation\Swiper\index.tsx
  */
 import { useBanner } from "@/services"
 import { Box, Circle, Image, Center } from "@chakra-ui/react"
 import "../../../../../../style/index.css"
 import { BiChevronLeft, BiChevronRight } from "react-icons/bi"
-import { FC, useMemo, useState } from "react"
+import { FC, useEffect, useMemo, useState } from "react"
 import { IRes } from "@/types"
 
-let timerID: any
+function left(location: { id: string; name: string }[]) {
+    let dir = [...location]
+    const pop = dir.pop()
+    dir.unshift(pop ? pop : { id: "0", name: "" })
+    return dir
+}
+function right(location: { id: string; name: string }[]) {
+    let dir = [...location]
+    const shift = dir.shift()
+    dir.push(shift ? shift : { id: "0", name: "" })
+    return dir
+}
+let timeID: any
+
 const Swiper: FC = () => {
     const [location, setLocation] = useState([
-        { name: "middle" },
-        { name: "right" },
-        { name: "hide" },
-        { name: "hide" },
-        { name: "hide" },
-        { name: "hide" },
-        { name: "hide" },
-        { name: "left" }
+        { id: "1", name: "middle" },
+        { id: "2", name: "right" },
+        { id: "3", name: "hide" },
+        { id: "4", name: "hide" },
+        { id: "5", name: "hide" },
+        { id: "6", name: "hide" },
+        { id: "7", name: "hide" },
+        { id: "8", name: "left" }
     ])
 
     const { data: banner, isLoading: bannerIsLoading } = useBanner()
     const picture = useMemo(() => {
         if (banner) {
-            sessionStorage.setItem("banner", JSON.stringify(banner))
+            //sessionStorage.setItem("banner", JSON.stringify(banner))
             return (banner as IRes).banners
         }
     }, [banner])
 
-    function left(location: { name: string }[]) {
-        let dir = [...location]
-        const pop = dir.pop()
-        dir.unshift(pop ? pop : { name: "" })
-        return dir
-    }
-    function right(location: { name: string }[]) {
-        let dir = [...location]
-        const shift = dir.shift()
-        dir.push(shift ? shift : { name: "" })
-        return dir
-    }
+    useEffect(() => {
+        timeID = setInterval(() => setLocation(left(location)), 3000)
+        return () => {
+            if (timeID) {
+                clearInterval(timeID)
+            }
+        }
+    }, [location])
 
-    if (timerID) clearTimeout(timerID)
-    timerID = setInterval(() => setLocation(left(location)), 3000)
+
     return (
-        <>
+        <Box>
             <Box bg="white" h="12em">
                 <Box h="12em" m="auto" position="relative" w="68em">
                     <Circle className="leftCircle">
@@ -112,7 +120,7 @@ const Swiper: FC = () => {
                     </Center>
                 </Box>
             </Box>
-        </>
+        </Box>
     )
 }
 
