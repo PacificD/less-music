@@ -1,8 +1,8 @@
 /*
  * @Author: Pacific_D
  * @Date: 2022-03-30 21:55:42
- * @LastEditTime: 2022-07-18 10:46:46
- * @LastEditors: Pacific_D
+ * @LastEditTime: 2022-08-01 20:07:51
+ * @LastEditors: Ride-pig 327796210@qq.com
  * @Description:
  * @FilePath: \music\src\api\status.ts
  */
@@ -49,6 +49,15 @@ export const showMessage = (status: number | string): string => {
             break
         case 505:
             message = "HTTP版本不受支持(505)"
+            break
+        case 800:
+            message = "二维码过期"
+            break
+        case 801:
+            message = "等待扫码"
+            break
+        case 802:
+            message = "待确认"
             break
         default:
             message = `连接出错(${status})!`

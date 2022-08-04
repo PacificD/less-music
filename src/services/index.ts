@@ -1,10 +1,10 @@
 /*
  * @Author: Pacific_D
  * @Date: 2022-07-22 14:21:33
- * @LastEditTime: 2022-07-30 11:35:33
- * @LastEditors: Pacific_D
+ * @LastEditTime: 2022-08-03 20:40:32
+ * @LastEditors: Ride-pig
  * @Description:
- * @FilePath: \less-music\src\services\index.ts
+ * @FilePath: \整合\less-music\src\services\index.ts
  */
 export { default as usePlaylistDetailQuery } from "./services/usePlaylistDetailQuery"
 export { default as useHighqualityPlaylistQuery } from "./services/useHighqualityPlaylistQuery"
@@ -22,3 +22,5 @@ export { default as useAlbumDetails } from "./services/useAlbumDetails"
 export { default as useNewSongQuery } from "./services/useNewSongQuery"
 export { default as useTopSongQuery } from "./services/useTopSongQuery"
 export { default as useNewDiscsQuery } from "./services/useNewDiscsQuery"
+export { default as usePhoneLoginQuery } from "./services/usePhoneLoginQuery"
+export { default as useQRCodeKeyQuery } from "./services/useQRCodeKeyQuery"
