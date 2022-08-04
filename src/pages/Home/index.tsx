@@ -1,23 +1,42 @@
 /*
  * @Author: Pacific_D
  * @Date: 2022-07-18 10:14:40
- * @LastEditTime: 2022-07-30 11:24:35
- * @LastEditors: Pacific_D
+ * @LastEditTime: 2022-08-03 11:54:27
+ * @LastEditors: Giaruei
  * @Description:
  * @FilePath: \less-music\src\pages\Home\index.tsx
  */
 
-import { FC } from "react"
+import React, { FC, useState } from "react"
 import Header from "./Header"
 import Main from "./Main"
 import { Box } from "@chakra-ui/react"
 
+export const msgContext = React.createContext(0)
+export const setMsgContext = React.createContext(
+    null as unknown as React.Dispatch<React.SetStateAction<number>>
+)
+export const lastMsgContext = React.createContext([] as number[])
+export const setLastMsgContext = React.createContext(
+    null as unknown as React.Dispatch<React.SetStateAction<number[]>>
+)
 const Home: FC = () => {
+    const [msg, setMsg] = useState(0)
+    const [lastMsg, setLastMsg] = useState([] as number[])
+
     return (
-        <Box overflow="hidden">
-            <Header></Header>
-            <Main></Main>
-        </Box>
+        <msgContext.Provider value={msg}>
+            <lastMsgContext.Provider value={lastMsg}>
+                <setMsgContext.Provider value={setMsg}>
+                    <setLastMsgContext.Provider value={setLastMsg}>
+                        <Box overflow="hidden">
+                            <Header></Header>
+                            <Main></Main>
+                        </Box>
+                    </setLastMsgContext.Provider>
+                </setMsgContext.Provider>
+            </lastMsgContext.Provider>
+        </msgContext.Provider>
     )
 }
 

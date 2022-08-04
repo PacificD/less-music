@@ -1,7 +1,7 @@
 /*
  * @Author: Giaruei
  * @Date: 2022-07-29 17:15:34
- * @LastEditTime: 2022-07-29 20:05:11
+ * @LastEditTime: 2022-08-01 20:25:56
  * @LastEditors: Giaruei
  * Description: 歌单详情页的收藏页
  * @FilePath: \less-music\src\pages\Playlist\Subscriber\index.tsx
@@ -23,7 +23,6 @@ const Subscriber: FC<IProps> = ({ detailIsLoading, subscribers }) => {
                     Loading ...
                 </Text>
             ) : (
-                // <Box>{JSON.stringify(subscribers)}</Box>
                 <Grid gap={6} p="25px" templateColumns="repeat(4, 1fr)">
                     {subscribers.map((item: any) => (
                         <Flex alignItems="center" key={item.userId} w="300px">

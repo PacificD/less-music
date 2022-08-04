@@ -1,8 +1,8 @@
 /*
  * @Author: DZR
  * @Date: 2022-07-28 16:44:18
- * @LastEditTime: 2022-07-30 09:40:46
- * @LastEditors: DZR
+ * @LastEditTime: 2022-08-04 10:03:28
+ * @LastEditors: Giaruei
  * @Description:
  * @FilePath: \less-music\src\pages\Home\Main\FindMusic\Singer\SingerPicture.tsx
  */
@@ -11,7 +11,7 @@ import { useSinger } from "@/services"
 import { IRes } from "@/types"
 import { Box, Flex, Image, Text } from "@chakra-ui/react"
 import { useMemo } from "react"
-import { Link, Outlet, useNavigate } from "react-router-dom"
+import { Outlet, useNavigate } from "react-router-dom"
 import SingerClassify from "./SingerClassify"
 
 const SingerPicture = () => {
@@ -32,14 +32,13 @@ const SingerPicture = () => {
                         {singerIsLoading ? (
                             <Box fontSize={100}>loading</Box>
                         ) : (
-                            Details.map((item: any, index: number) => {
+                            Details.map((item: any) => {
                                 return (
-                                    <Box key={index + 50}>
+                                    <Box key={item.id}>
                                         <Image
                                             alt="singerPicture"
                                             cursor="pointer"
                                             h="150px"
-                                            key={index + 40}
                                             margin="9px"
                                             onClick={() =>
                                                 navigate("/findmusic/singer/page", {
@@ -49,9 +48,7 @@ const SingerPicture = () => {
                                             src={item.picUrl}
                                             w="170px"
                                         ></Image>
-                                        <Text className="singerName" key={index + 60}>
-                                            {item.name}
-                                        </Text>
+                                        <Text className="singerName">{item.name}</Text>
                                     </Box>
                                 )
                             })
