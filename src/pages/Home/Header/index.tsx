@@ -1,8 +1,8 @@
 /*
  * @Author: DZR
  * @Date: 2022-07-20 09:30:37
- * @LastEditTime: 2022-07-30 11:52:28
- * @LastEditors: Pacific_D
+ * @LastEditTime: 2022-08-03 10:36:28
+ * @LastEditors: DZR
  * @Description:
  * @FilePath: \less-music\src\pages\Home\Header\index.tsx
  */
@@ -36,7 +36,7 @@ const Header: FC = () => {
                             cursor="pointer"
                             fontSize="1.5em"
                             onClick={() => {
-                                navigate("/findmusic/singer/picture")
+                                navigate(-1)
                             }}
                             style={{ padding: "4px" }}
                         ></AiOutlineLeft>
@@ -47,6 +47,9 @@ const Header: FC = () => {
                             color="white"
                             cursor="pointer"
                             fontSize="1.5em"
+                            onClick={() => {
+                                navigate(+1)
+                            }}
                             style={{ padding: "4px" }}
                         ></AiOutlineRight>
                     </Circle>

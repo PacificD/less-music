@@ -1,67 +1,57 @@
 /*
  * @Author: DZR
  * @Date: 2022-07-29 17:02:30
- * @LastEditTime: 2022-07-30 09:21:01
+ * @LastEditTime: 2022-08-04 10:30:59
  * @LastEditors: DZR
- * @Description:
+ * @Description:歌手详情页中的专辑页面（显示热门50首歌的组件）
  * @FilePath: \less-music\src\pages\Home\Main\FindMusic\Singer\SingerPage\Album.tsx
  */
 import { Box, Flex, Text, Image } from "@chakra-ui/react"
-import { AiOutlineFolderAdd, AiOutlinePlayCircle, AiOutlineHeart } from "react-icons/ai"
+import {
+    AiOutlineFolderAdd,
+    AiOutlinePlayCircle,
+    AiOutlineHeart,
+    AiOutlineRight
+} from "react-icons/ai"
 import "@/style/index.css"
 import { BsDownload } from "react-icons/bs"
 import { useLocation } from "react-router-dom"
-import { useAlbumDetails, useSingerAlbum, useSingerHotFiftySongs } from "@/services"
-import { useMemo } from "react"
+import { useSingerHotFiftySongs } from "@/services"
+import { useMemo, useState } from "react"
+import AlbumList from "./AlbumList"
+import { calculateDuration } from "@/utils"
+import { useCtxValue } from "@/hooks"
 
 type myType = {
     msg: any
 }
-const singerDetails = [
-    { id: "01", song: "新地球", time: "04:37" },
-    { id: "02", song: "美人鱼", time: "04:14" },
-    { id: "03", song: "不为谁而作的歌", time: "04:29" },
-    { id: "04", song: "可惜没有如果", time: "04:58" },
-    { id: "05", song: "修炼爱情", time: "04:47" },
-    { id: "06", song: "我怀念的", time: "05:12" },
-    { id: "07", song: "江南", time: "04:27" },
-    { id: "08", song: "过", time: "03:23" },
-    { id: "09", song: "浪漫血液", time: "04:32" },
-    { id: "10", song: "手心的蔷薇", time: "04:40" }
-]
 
 const Album = () => {
     const location = useLocation()
     const { msg } = location.state as myType
-    //const text = msg.alias.length === 2 ? msg.alias[0] + " ; " + msg.alias[1] : msg.alias[0]
-    //console.log(msg)
-    // console.log(msg.id)
     const { data: songs, isLoading: songsIsloading } = useSingerHotFiftySongs({ id: msg.id })
     const Details = useMemo(() => {
         if (songs) {
-            //console.log(songs)
+            console.log(songs.songs)
             return songs.songs
         }
     }, [songs])
-
-    const { data: album, isLoading: albumIsLoading } = useSingerAlbum({ id: msg.id })
-    const albumNames = useMemo(() => {
-        if (album) {
-            return album.hotAlbums
-        }
-    }, [album])
-    //console.log(albumNames)
-    //const {data:albumDetails,isLoading:albumDetailsIsLoading}=useAlbumDetails()
+    const [on, setOn] = useState(true)
+    const { playMusic } = useCtxValue()
+    const play = (item: any) => {
+        playMusic({
+            id: item.id,
+            name: item.name,
+            cover: item.al.picUrl,
+            duration: item.dt,
+            artists: item.ar
+        })
+    }
 
     return (
         <Box>
             <Flex>
-                <Box bg="skyblue" fontSize={20} h="170px" w="190px">
-                    <Image
-                        alt="top50"
-                        src="https://gitee.com/deng-zirong-Git/imgs/raw/master/top50.png"
-                    ></Image>
-                </Box>
+                <Box fontSize={20} h="170px" w="190px"></Box>
                 <Box ml="70px" w="100%">
                     <Flex>
                         <Text fontWeight="bold" mr="20px">
@@ -75,31 +65,20 @@ const Album = () => {
                     </Flex>
                     <Box>
                         {songsIsloading ? (
-                            <Box fontSize={200}>Loading</Box>
+                            <Box fontSize={100}>Loading</Box>
                         ) : (
                             Details.map((item: any, index: number) => {
-                                if (index % 2 === 0) {
-                                    return (
-                                        <Flex
-                                            bg="#fafafa"
-                                            className="topFiftySong"
-                                            fontSize={14}
-                                            key={index}
-                                        >
-                                            <Text color="gray" marginRight="15px">
-                                                {index < 9 ? "0" + (index + 1) : index + 1}
-                                            </Text>
-                                            <AiOutlineHeart className="heartIcon" fontSize={17} />
-                                            <BsDownload className="heartIcon" fontSize={17} />
-                                            {item.name}
-                                            <Text color="gray" position="absolute" right="200px">
-                                                {/* {item.time} */}
-                                            </Text>
-                                        </Flex>
-                                    )
-                                }
                                 return (
-                                    <Flex className="topFiftySong" fontSize={14} key={index}>
+                                    <Flex
+                                        bg={index % 2 === 0 ? "#fafafa" : "white"}
+                                        className="topFiftySong"
+                                        display={index > 9 && on ? "none" : "flex"}
+                                        fontSize={14}
+                                        key={index}
+                                        onDoubleClick={() => {
+                                            play(item)
+                                        }}
+                                    >
                                         <Text color="gray" marginRight="15px">
                                             {index < 9 ? "0" + (index + 1) : index + 1}
                                         </Text>
@@ -107,28 +86,43 @@ const Album = () => {
                                         <BsDownload className="heartIcon" fontSize={17} />
                                         {item.name}
                                         <Text color="gray" position="absolute" right="200px">
-                                            {/* {item.time} */}
+                                            {calculateDuration(item.dt)}
                                         </Text>
                                     </Flex>
                                 )
                             })
                         )}
+                        <Flex
+                            bg="#fafafa"
+                            display={on ? "flex" : "none"}
+                            fontSize="xs"
+                            h="30px"
+                            padding="5px"
+                            position="relative"
+                        >
+                            <Box
+                                bg="pink"
+                                cursor="pointer"
+                                onClick={() => {
+                                    setOn(false)
+                                }}
+                            >
+                                {songsIsloading ? (
+                                    <Box>loading</Box>
+                                ) : (
+                                    <Text color="gray" position="absolute" right="30px">
+                                        查看全部{Details.length}首
+                                    </Text>
+                                )}
+                                <Text color="gray" padding="3px" position="absolute" right="13px">
+                                    <AiOutlineRight />
+                                </Text>
+                            </Box>
+                        </Flex>
                     </Box>
                 </Box>
             </Flex>
-            {/* {albumIsLoading ? (
-                <Box fontSize={200}>Loading</Box>
-            ) : (
-                albumNames.map((item: any, index: number) => {
-                    return (
-                        <Flex key={index} mt="50px">
-                            <Box bg="skyblue" fontSize={20} h="170px" w="190px">
-                                <Image sizes="100%" src={item.blurPicUrl}></Image>
-                            </Box>
-                        </Flex>
-                    )
-                })
-            )} */}
+            <AlbumList msg={msg.id}></AlbumList>
         </Box>
     )
 }

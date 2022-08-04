@@ -1,8 +1,8 @@
 /*
  * @Author: Pacific_D
  * @Date: 2022-07-22 14:21:33
- * @LastEditTime: 2022-07-30 11:35:33
- * @LastEditors: Pacific_D
+ * @LastEditTime: 2022-08-03 18:29:21
+ * @LastEditors: DZR
  * @Description:
  * @FilePath: \less-music\src\services\index.ts
  */
@@ -22,3 +22,8 @@ export { default as useAlbumDetails } from "./services/useAlbumDetails"
 export { default as useNewSongQuery } from "./services/useNewSongQuery"
 export { default as useTopSongQuery } from "./services/useTopSongQuery"
 export { default as useNewDiscsQuery } from "./services/useNewDiscsQuery"
+export { default as useSingerDescription } from "./services/useSingerDescription"
+export { default as useSingerMV } from "./services/useSingerMV"
+export { default as useMVComments } from "./services/useMVComments"
+export { default as useQRCodeKeyQuery } from "./services/useQRCodeKeyQuery"
+export { default as usePhoneLoginQuery } from "./services/usePhoneLoginQuery"

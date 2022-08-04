@@ -1,10 +1,10 @@
 /*
  * @Author: Pacific_D
  * @Date: 2022-07-29 12:27:08
- * @LastEditTime: 2022-07-29 15:57:08
- * @LastEditors: Pacific_D
+ * @LastEditTime: 2022-08-01 17:29:51
+ * @LastEditors: DZR
  * @Description:
- * @FilePath: \lessMusic\src\services\services\useMVDetailQuery.ts
+ * @FilePath: \less-music\src\services\services\useMVDetailQuery.ts
  */
 import { METHODS, Resolution, MVDetail, IRes } from "@/types"
 import { useQuery } from "@tanstack/react-query"

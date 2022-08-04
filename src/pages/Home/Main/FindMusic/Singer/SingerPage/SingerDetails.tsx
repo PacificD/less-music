@@ -1,15 +1,72 @@
 /*
  * @Author: DZR
  * @Date: 2022-07-29 17:04:21
- * @LastEditTime: 2022-07-29 17:05:42
+ * @LastEditTime: 2022-08-02 20:36:36
  * @LastEditors: DZR
- * @Description:
+ * @Description: 歌手详情页中的歌手详情组件
  * @FilePath: \less-music\src\pages\Home\Main\FindMusic\Singer\SingerPage\SingerDetails.tsx
  */
-import { Box } from "@chakra-ui/react"
+import { useArtistDetails, useSingerDescription } from "@/services"
+import { Box, Text } from "@chakra-ui/react"
+import { useMemo } from "react"
+import { useLocation } from "react-router-dom"
+
+type myType = {
+    msg: any
+}
 
 const SingerDetails = () => {
-    return <Box></Box>
+    const Ti: string[] = []
+    const Txt: string[] = []
+    const location = useLocation()
+    const { msg } = location.state as myType
+    const { data: singerDetails, isLoading: singerDetailsIsloading } = useArtistDetails({
+        id: msg.id
+    })
+    const { data: desc, isLoading: descIsLoading } = useSingerDescription(msg.id)
+
+    const Details = useMemo(() => {
+        if (singerDetails) {
+            return singerDetails.data.artist.briefDesc
+        }
+    }, [singerDetails])
+    const descDetails = useMemo(() => {
+        if (desc) {
+            return desc.introduction
+        }
+    }, [desc])
+    if (desc) {
+        desc.introduction.forEach((item: any) => {
+            Txt.push(item.txt)
+            Ti.push(item.ti)
+        })
+    }
+    return (
+        <Box>
+            {singerDetailsIsloading ? (
+                <Box>loading</Box>
+            ) : (
+                <Box marginBottom="40px">
+                    <Text marginBottom="13px">{msg.name + "简介"}</Text>
+                    <Text className="singersDetails" color="gray">
+                        {Details}
+                    </Text>
+                </Box>
+            )}
+            {descIsLoading ? (
+                <Box>loading</Box>
+            ) : (
+                descDetails.map((item: any, index: number) => {
+                    return (
+                        <Text className="singersDetails" key={index} marginBottom="40px">
+                            <Text marginBottom="13px">{Ti[index]}</Text>
+                            <Text color="gray">{Txt[index]}</Text>
+                        </Text>
+                    )
+                })
+            )}
+        </Box>
+    )
 }
 
 export default SingerDetails

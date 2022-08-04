@@ -1,10 +1,10 @@
 /*
  * @Author: Pacific_D
  * @Date: 2022-07-25 20:58:33
- * @LastEditTime: 2022-07-29 16:27:52
- * @LastEditors: Pacific_D
+ * @LastEditTime: 2022-08-03 20:51:55
+ * @LastEditors: DZR
  * @Description:
- * @FilePath: \lessMusic\src\pages\MV\index.tsx
+ * @FilePath: \less-music\src\pages\MV\index.tsx
  */
 import { useMVDetailQuery } from "@/services"
 import { MVDetail, Resolution } from "@/types"
@@ -18,7 +18,8 @@ const MV: FC = () => {
     const { id } = useParams(),
         [radioWithUrl, setRadioWithUrl] = useState<Array<[number, string]>>([])
 
-    const { data: mvDetail, isLoading } = useMVDetailQuery(+id!)
+    const { data: mvDetail, isLoading } = useMVDetailQuery(+id!),
+        [, renderer] = useState(0)
 
     const MVPlayer = useRef<Player | null>(null)
 
@@ -30,6 +31,7 @@ const MV: FC = () => {
 
     useEffect(() => {
         if (radioWithUrl.length !== 0 && MVPlayer.current === null) {
+            //console.log(radioWithUrl)
             MVPlayer.current = new Player({
                 id: "MVPlayer",
                 url: radioWithUrl[radioWithUrl.length - 1][1],
@@ -45,11 +47,12 @@ const MV: FC = () => {
                     }
                 })
             )
+            renderer(Math.random())
         }
-    }, [MVPlayer, radioWithUrl, mvDetail])
+    }, [MVPlayer, radioWithUrl, mvDetail, id])
 
     return (
-        <Flex alignItems="center" justifyContent="center" mt="24">
+        <Flex alignItems="center" justifyContent="center" mt="4">
             <div id="MVPlayer"></div>
         </Flex>
     )

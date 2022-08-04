@@ -1,14 +1,15 @@
 /*
  * @Author: Pacific_D
  * @Date: 2022-07-19 10:16:22
- * @LastEditTime: 2022-07-30 11:45:59
- * @LastEditors: Pacific_D
+ * @LastEditTime: 2022-08-04 11:06:05
+ * @LastEditors: DZR
  * @Description:
  * @FilePath: \less-music\src\router\config\index.tsx
  */
 import {
     Home,
     Login,
+    MVdetails,
     MV,
     NotFound,
     Playlist,
@@ -22,17 +23,18 @@ import {
     Video,
     Attention,
     Live,
-    PrivateFM
+    PrivateFM,
+    Playing
 } from "@/pages"
-import { useRoutes } from "react-router-dom"
+import { Navigate, useRoutes } from "react-router-dom"
 
 // 当路由结构复杂时，考虑重构为扁平化配置
 const RouterConfig = () => {
     return useRoutes([
-        // {
-        //     path: "/",
-        //     element: <Home />
-        // },
+        {
+            path: "/",
+            element: <Navigate to="/findmusic/recommendation" />
+        },
         {
             path: "/",
             element: <Home />,
@@ -84,10 +86,18 @@ const RouterConfig = () => {
                 {
                     path: "privatefm",
                     element: <PrivateFM />
+                },
+                {
+                    path: "/mv/:id",
+                    element: <MVdetails />
                 }
             ]
         },
 
+        {
+            path: "/login",
+            element: <Navigate to="/login/qrcode" />
+        },
         {
             path: "/login",
             element: <Login />
@@ -97,12 +107,8 @@ const RouterConfig = () => {
             element: <NotFound />
         },
         {
-            path: "/playlist",
-            element: <Playlist playlistId={localStorage.getItem("id") as string} />
-        },
-        {
-            path: "/mv/:id",
-            element: <MV />
+            path: "/playing/:id",
+            element: <Playing />
         }
     ])
 }
