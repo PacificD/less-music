@@ -1,13 +1,15 @@
 /*
  * @Author: DZR
  * @Date: 2022-07-20 09:30:37
- * @LastEditTime: 2022-08-03 10:36:28
- * @LastEditors: DZR
+ * @LastEditTime: 2022-08-04 11:45:10
+ * @LastEditors: Pacific_D
  * @Description:
  * @FilePath: \less-music\src\pages\Home\Header\index.tsx
  */
+import { lastMsgContext, msgContext, setLastMsgContext, setMsgContext } from ".."
+
 import { Box, Center, chakra, Circle, Input, Spacer, Square, Text } from "@chakra-ui/react"
-import { FC } from "react"
+import { FC, useContext } from "react"
 import { RiLoginBoxLine, RiNeteaseCloudMusicFill } from "react-icons/ri"
 import { AiOutlineLeft, AiOutlineRight, AiOutlineSearch } from "react-icons/ai"
 import { useNavigate } from "react-router-dom"
@@ -15,6 +17,10 @@ import { ColorModeSwitcher } from "@/components"
 const CloudMusic = chakra(RiNeteaseCloudMusicFill)
 
 const Header: FC = () => {
+    const lastMsg = useContext(lastMsgContext)
+    const msg = useContext(msgContext)
+    const setMsg = useContext(setMsgContext)
+    const setLastMsg = useContext(setLastMsgContext)
     const navigate = useNavigate()
     return (
         <Center>
@@ -36,7 +42,10 @@ const Header: FC = () => {
                             cursor="pointer"
                             fontSize="1.5em"
                             onClick={() => {
+                                console.log(msg, lastMsg)
                                 navigate(-1)
+                                setMsg(lastMsg[lastMsg.length - 2])
+                                lastMsg.pop()
                             }}
                             style={{ padding: "4px" }}
                         ></AiOutlineLeft>
@@ -50,7 +59,7 @@ const Header: FC = () => {
                             onClick={() => {
                                 navigate(+1)
                             }}
-                            style={{ padding: "4px" }}
+                            style={{ padding: "4px", transition: "all .3s" }}
                         ></AiOutlineRight>
                     </Circle>
                     <Box w="2em"></Box>

@@ -1,10 +1,10 @@
 /*
  * @Author: Pacific_D
  * @Date: 2022-07-23 15:18:21
- * @LastEditTime: 2022-07-25 17:24:02
- * @LastEditors: Pacific_D
+ * @LastEditTime: 2022-08-01 15:11:38
+ * @LastEditors: Giaruei
  * @Description:
- * @FilePath: \lessMusic\src\components\Navbar\index.tsx
+ * @FilePath: \less-music\src\components\Navbar\index.tsx
  */
 
 import { Box, Flex, Spacer, Image, Heading, useColorModeValue } from "@chakra-ui/react"

@@ -1,21 +1,21 @@
 /*
  * @Author: Giaruei
- * @Date: 2022-08-03 20:11:51
- * @LastEditTime: 2022-08-04 11:44:03
- * @LastEditors: Pacific_D
+ * @Date: 2022-08-03 17:59:48
+ * @LastEditTime: 2022-08-04 10:28:58
+ * @LastEditors: Giaruei
  * @Description:
- * @FilePath: \less-music\src\services\services\useQRCodeKeyQuery.ts
+ * @FilePath: \less-music\src\pages\Login\useQRCodeKeyQuery.ts
  */
 
 import { IRes, METHODS } from "@/types"
 import { useQuery } from "@tanstack/react-query"
-import request from "../request"
+import request from "@/services/request"
+
 /**
  * @description: 二维码key生成接口
  * @param {any} timestamp  时间戳
  * @return {*} 返回一个unikey
  */
-
 const useQRCodeKeyQuery = (timestamp: any) => {
     const keyValue: Array<string> = []
 
@@ -48,7 +48,6 @@ const useQRCodeKeyQuery = (timestamp: any) => {
                     })
                 return QRCreate
             })
-
     return useQuery(queryKey, fetchData)
 }
 

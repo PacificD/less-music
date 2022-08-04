@@ -1,7 +1,7 @@
 /*
  * @Author: Pacific_D
  * @Date: 2022-07-19 10:16:22
- * @LastEditTime: 2022-08-04 11:39:59
+ * @LastEditTime: 2022-08-04 11:47:28
  * @LastEditors: Pacific_D
  * @Description:
  * @FilePath: \less-music\src\router\config\index.tsx
@@ -15,6 +15,8 @@ import {
     Playlist,
     Recommendation,
     Singer,
+    SongList,
+    HighPlaylist,
     LatestMusic,
     NewSongExpress,
     NewDiscs,
@@ -27,7 +29,7 @@ import {
     Playing
 } from "@/pages"
 import { Password } from "@/pages/Login/password"
-import { QrCode } from "@/pages/Login/qrCode"
+import QrCode from "@/pages/Login/QR"
 import { Navigate, useRoutes } from "react-router-dom"
 
 // 当路由结构复杂时，考虑重构为扁平化配置
@@ -76,8 +78,16 @@ const RouterConfig = () => {
                             element: <Recommendation />
                         },
                         {
+                            path: "songlist",
+                            element: <SongList />
+                        },
+                        {
+                            path: "highplaylist",
+                            element: <HighPlaylist />
+                        },
+                        {
                             path: "latestmusic",
-                            element: <LatestMusic></LatestMusic>,
+                            element: <LatestMusic />,
                             children: [
                                 {
                                     path: "newsongexpress",
@@ -90,6 +100,10 @@ const RouterConfig = () => {
                             ]
                         }
                     ]
+                },
+                {
+                    path: "playlist/:id",
+                    element: <Playlist />
                 },
                 {
                     path: "podcast",

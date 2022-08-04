@@ -1,20 +1,22 @@
 /*
  * @Author: DZR
  * @Date: 2022-07-20 09:30:50
- * @LastEditTime: 2022-08-02 10:34:54
- * @LastEditors: DZR
+ * @LastEditTime: 2022-08-04 11:45:20
+ * @LastEditors: Pacific_D
  * @Description:
  * @FilePath: \less-music\src\pages\Home\Main\index.tsx
  */
-
+import { lastMsgContext, msgContext, setLastMsgContext, setMsgContext } from ".."
 import { Box, Flex, Center } from "@chakra-ui/react"
-import { FC, useState } from "react"
+import { FC, useContext } from "react"
 import "../../../style/main.css"
 import { Outlet, useNavigate } from "react-router-dom"
-
 const Main: FC = () => {
-    const [msg, setMsg] = useState(0)
     const navigate = useNavigate()
+    const lastMsg = useContext(lastMsgContext)
+    const msg = useContext(msgContext)
+    const setMsg = useContext(setMsgContext)
+    const setLastMsg = useContext(setLastMsgContext)
 
     const arr = [
         { id: 0, name: "发现音乐", path: "/findmusic/recommendation" },
@@ -31,11 +33,14 @@ const Main: FC = () => {
                 <Flex alignItems="center" flexWrap="wrap" justifyContent="center" rowGap="0.2em">
                     {arr.map(item => (
                         <Box
-                            className={item.id === msg ? "selectedList" : "list"}
+                            className={msg === item.id ? "selectedList" : "list"}
                             key={item.id}
                             onClick={() => {
+                                lastMsg.push(item.id)
+                                setLastMsg(lastMsg)
                                 setMsg(item.id)
                                 navigate(item.path)
+                                console.log(lastMsg)
                             }}
                         >
                             {item.name}
@@ -44,9 +49,7 @@ const Main: FC = () => {
                 </Flex>
             </Box>
             <Box h="50.5em" position="relative" w="110.5em">
-                <Box>
-                    <Outlet />
-                </Box>
+                <Outlet />
             </Box>
         </Center>
     )

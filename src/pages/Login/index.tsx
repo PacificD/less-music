@@ -1,8 +1,8 @@
 /*
  * @Author: Pacific_D
  * @Date: 2022-07-18 10:28:37
- * @LastEditTime: 2022-08-03 09:47:30
- * @LastEditors: Ride-pig 327796210@qq.com
+ * @LastEditTime: 2022-08-04 11:45:57
+ * @LastEditors: Pacific_D
  * @Description:
  * @FilePath: \less-music\src\pages\Login\index.tsx
  */
@@ -60,9 +60,9 @@ const Login: FC = () => {
                         top="10%"
                         w="5em"
                     >
-                        {boolean == true ? "手机登录" : "扫码登陆"}
+                        {boolean === true ? "手机登录" : "扫码登陆"}
                     </Center>
-                    {boolean == true ? (
+                    {boolean === true ? (
                         <MdPhoneIphone color="#7ba3ff" fontSize="4em" />
                     ) : (
                         <AiOutlineQrcode color="#7ba3ff" fontSize="4em" />

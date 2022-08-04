@@ -1,7 +1,7 @@
 /*
  * @Author: Pacific_D
  * @Date: 2022-07-22 14:21:33
- * @LastEditTime: 2022-08-04 11:38:06
+ * @LastEditTime: 2022-08-04 11:44:32
  * @LastEditors: Pacific_D
  * @Description:
  * @FilePath: \less-music\src\services\index.ts
@@ -27,3 +27,4 @@ export { default as useSingerMV } from "./services/useSingerMV"
 export { default as useMVComments } from "./services/useMVComments"
 export { default as useQRCodeKeyQuery } from "./services/useQRCodeKeyQuery"
 export { default as usePhoneLoginQuery } from "./services/usePhoneLoginQuery"
+export { default as useTopPlaylistQuery } from "./services/useTopPlaylistQuery"

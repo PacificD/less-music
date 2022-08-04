@@ -1,12 +1,12 @@
 /*
  * @Author: Pacific_D
  * @Date: 2022-07-18 10:14:40
- * @LastEditTime: 2022-08-03 10:39:04
- * @LastEditors: DZR
+ * @LastEditTime: 2022-08-04 11:46:29
+ * @LastEditors: Pacific_D
  * @Description:
  * @FilePath: \less-music\src\pages\App.tsx
  */
-import { FC, createContext, useMemo, useContext, useReducer, useRef, useState } from "react"
+import { FC, createContext, useMemo, useReducer, useRef, useState } from "react"
 import ViewRouter from "@/router/ViewRouter"
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
 import "@/style/index.css"
@@ -51,7 +51,6 @@ const App: FC = () => {
             payload: music
         })
     }
-
     return (
         <QueryClientProvider client={queryClient}>
             <ctx.Provider value={{ playingMusic, playlist, playlistDispatch, playMusic }}>

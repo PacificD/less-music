@@ -1,8 +1,8 @@
 /*
  * @Author: Pacific_D
  * @Date: 2022-07-19 10:12:26
- * @LastEditTime: 2022-08-03 11:12:41
- * @LastEditors: DZR
+ * @LastEditTime: 2022-08-04 11:46:42
+ * @LastEditors: Pacific_D
  * @Description:
  * @FilePath: \less-music\src\pages\index.ts
  */
@@ -27,3 +27,5 @@ export const Live = lazy(() => import("./Home/Main/Live"))
 export const PrivateFM = lazy(() => import("./Home/Main/PrivateFM"))
 export const MVdetails = lazy(() => import("./Home/Main/FindMusic/Singer/SingerPage/MVdetails"))
 export const Playing = lazy(() => import("./Playing"))
+export const SongList = lazy(() => import("./Home/Main/FindMusic/SongList"))
+export const HighPlaylist = lazy(() => import("./Home/Main/FindMusic/SongList/HighPlaylist"))
