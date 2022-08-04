@@ -1,8 +1,8 @@
 /*
  * @Author: Giaruei
  * @Date: 2022-07-26 20:09:43
- * @LastEditTime: 2022-07-30 11:22:56
- * @LastEditors: Pacific_D
+ * @LastEditTime: 2022-08-04 10:41:44
+ * @LastEditors: Giaruei
  * @Description: 歌单详情页的歌单信息
  * @FilePath: \less-music\src\pages\Playlist\PlaylistDetail\index.tsx
  */
@@ -59,7 +59,7 @@ const PlaylistDetail: FC<IProps> = ({ detailIsLoading, playlist, tracks }) => {
     }
 
     return (
-        <Flex padding="20px" w="110.5em">
+        <Flex padding="20px" w="100em">
             {detailIsLoading ? (
                 <Text color="blue.400" fontSize="2xl" fontWeight="bold">
                     Loading ...

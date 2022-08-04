@@ -1,8 +1,8 @@
 /*
  * @Author: Giaruei
  * @Date: 2022-07-25 15:24:11
- * @LastEditTime: 2022-07-30 11:31:23
- * @LastEditors: Pacific_D
+ * @LastEditTime: 2022-08-04 10:40:44
+ * @LastEditors: Giaruei
  * @Description: 歌单的详情页面
  * @FilePath: \less-music\src\pages\Playlist\index.tsx
  */
@@ -20,6 +20,7 @@ import PlaylistDetail from "./PlaylistDetail"
 import Songlist from "./Songlist"
 import Comments from "@/pages/Comments"
 import Subscriber from "./Subscriber"
+import { useParams } from "react-router-dom"
 
 function changePage(
     index: number,
@@ -47,22 +48,14 @@ function changePage(
     }
 }
 
-interface IProps {
-    playlistId: string
-}
-const Playlist: FC<IProps> = ({ playlistId }) => {
-    playlistId = !playlistId ? "610040691" : playlistId
-    const { data: info, isLoading: detailIsLoading } = usePlaylistDetailQuery(
-        parseInt(playlistId),
-        true
-    )
-    const { data: track, isLoading: songIsLoading } = usePlaylistTrackAllQuery(parseInt(playlistId))
-    const { data: comment, isLoading: commentIsLoading } = usePlaylistCommentQuery(
-        parseInt(playlistId)
-    )
-    const { data: subscriber, isLoading: subscriberIsLoading } = usePlaylistSubscribers(
-        parseInt(playlistId)
-    )
+const Playlist: FC = () => {
+    const { id } = useParams()
+    const playlistId = parseInt(id!)
+
+    const { data: info, isLoading: detailIsLoading } = usePlaylistDetailQuery(playlistId, true)
+    const { data: track, isLoading: songIsLoading } = usePlaylistTrackAllQuery(playlistId)
+    const { data: comment, isLoading: commentIsLoading } = usePlaylistCommentQuery(playlistId)
+    const { data: subscriber, isLoading: subscriberIsLoading } = usePlaylistSubscribers(playlistId)
 
     const playlist = useMemo(() => {
         if (info) {
@@ -88,18 +81,16 @@ const Playlist: FC<IProps> = ({ playlistId }) => {
         }
     }, [subscriber])
 
-    // console.log(subscribers)
-
     const [state, setState] = useState(0)
 
     return (
-        <Grid mb="70px" overflowX="hidden" w="full">
+        <Grid h="100%" mb="70px" overflowY="scroll" w="100%">
             <PlaylistDetail
                 detailIsLoading={detailIsLoading}
                 playlist={playlist}
                 tracks={tracks}
             ></PlaylistDetail>
-            <HStack fontSize="20px" h="50px" ml="30px" mt="20px">
+            <HStack fontSize="20px" h="50px" ml="30px">
                 {["歌曲列表", "评论", "收藏者"].map((item, index) => (
                     <Box
                         _hover={{

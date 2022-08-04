@@ -1,8 +1,8 @@
 /*
  * @Author: Pacific_D
  * @Date: 2022-07-19 10:16:22
- * @LastEditTime: 2022-07-30 11:45:59
- * @LastEditors: Pacific_D
+ * @LastEditTime: 2022-08-03 20:08:25
+ * @LastEditors: Giaruei
  * @Description:
  * @FilePath: \less-music\src\router\config\index.tsx
  */
@@ -14,6 +14,8 @@ import {
     Playlist,
     Recommendation,
     Singer,
+    SongList,
+    HighPlaylist,
     LatestMusic,
     NewSongExpress,
     NewDiscs,
@@ -24,15 +26,16 @@ import {
     Live,
     PrivateFM
 } from "@/pages"
-import { useRoutes } from "react-router-dom"
+import QrCode from "@/pages/Login/QR"
+import { Navigate, useRoutes } from "react-router-dom"
 
 // 当路由结构复杂时，考虑重构为扁平化配置
 const RouterConfig = () => {
     return useRoutes([
-        // {
-        //     path: "/",
-        //     element: <Home />
-        // },
+        {
+            path: "/",
+            element: <Navigate to="findmusic/recommendation" />
+        },
         {
             path: "/",
             element: <Home />,
@@ -50,8 +53,16 @@ const RouterConfig = () => {
                             element: <Recommendation />
                         },
                         {
+                            path: "songlist",
+                            element: <SongList />
+                        },
+                        {
+                            path: "highplaylist",
+                            element: <HighPlaylist />
+                        },
+                        {
                             path: "latestmusic",
-                            element: <LatestMusic></LatestMusic>,
+                            element: <LatestMusic />,
                             children: [
                                 {
                                     path: "newsongexpress",
@@ -64,6 +75,10 @@ const RouterConfig = () => {
                             ]
                         }
                     ]
+                },
+                {
+                    path: "playlist/:id",
+                    element: <Playlist />
                 },
                 {
                     path: "podcast",
@@ -87,18 +102,19 @@ const RouterConfig = () => {
                 }
             ]
         },
-
         {
             path: "/login",
-            element: <Login />
+            element: <Login />,
+            children: [
+                {
+                    path: "qrcode",
+                    element: <QrCode />
+                }
+            ]
         },
         {
             path: "*",
             element: <NotFound />
-        },
-        {
-            path: "/playlist",
-            element: <Playlist playlistId={localStorage.getItem("id") as string} />
         },
         {
             path: "/mv/:id",

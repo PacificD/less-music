@@ -1,8 +1,8 @@
 /*
  * @Author: DZR
  * @Date: 2022-07-23 11:00:44
- * @LastEditTime: 2022-07-30 11:37:43
- * @LastEditors: Pacific_D
+ * @LastEditTime: 2022-07-30 16:10:46
+ * @LastEditors: Giaruei
  * @Description:
  * @FilePath: \less-music\src\pages\Home\Main\FindMusic\Recommendation\Swiper\index.tsx
  */
@@ -73,6 +73,7 @@ const Swiper: FC = () => {
                                 >
                                     <Image
                                         alt="notFound"
+                                        borderRadius="10px"
                                         h="100%"
                                         src={picture[index].imageUrl}
                                         w="100%"

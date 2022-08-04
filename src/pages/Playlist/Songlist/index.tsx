@@ -1,8 +1,8 @@
 /*
  * @Author: Giaruei
  * @Date: 2022-07-26 20:07:07
- * @LastEditTime: 2022-07-30 11:23:07
- * @LastEditors: Pacific_D
+ * @LastEditTime: 2022-08-04 10:48:51
+ * @LastEditors: Giaruei
  * @Description: 歌单详情页的歌曲列表
  * @FilePath: \less-music\src\pages\Playlist\Songlist\index.tsx
  */
@@ -12,7 +12,9 @@ import { FC } from "react"
 import { AiOutlineDownload, AiOutlineHeart } from "react-icons/ai"
 
 interface IProps {
-    tracks: any
+    tracks: {
+        [key: string]: any
+    }
     detailIsLoading: boolean
 }
 
@@ -50,14 +52,14 @@ const Songlist: FC<IProps> = ({ detailIsLoading, tracks }) => {
     }
     return (
         <Box>
-            <VStack w="110.5em">
+            <VStack w="1000px">
                 {detailIsLoading ? (
                     <Text color="blue.400" fontSize="2xl" fontWeight="bold">
                         Loading ...
                     </Text>
                 ) : (
                     <Flex cursor="default" direction="column">
-                        <Flex h="30px" textAlign="center" w="110.5em">
+                        <Flex h="30px" textAlign="center" w="1000px">
                             <Box ml="50px" w="50px">
                                 操作
                             </Box>
@@ -82,7 +84,7 @@ const Songlist: FC<IProps> = ({ detailIsLoading, tracks }) => {
                                     textAlign="center"
                                     textOverflow="ellipsis"
                                     transition="all .3s"
-                                    w="110.5em"
+                                    w="100%"
                                     whiteSpace="nowrap"
                                 >
                                     <Box textAlign="center" w="50px">

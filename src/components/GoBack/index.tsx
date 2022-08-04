@@ -1,10 +1,10 @@
 /*
  * @Author: Pacific_D
  * @Date: 2022-07-25 21:56:37
- * @LastEditTime: 2022-07-26 15:00:30
- * @LastEditors: Pacific_D
+ * @LastEditTime: 2022-08-01 16:02:20
+ * @LastEditors: Giaruei
  * @Description:
- * @FilePath: \lessMusic\src\components\GoBack\index.tsx
+ * @FilePath: \less-music\src\components\GoBack\index.tsx
  */
 import { Center, chakra, useColorModeValue } from "@chakra-ui/react"
 import { FC } from "react"
