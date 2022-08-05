@@ -1,9 +1,9 @@
 /*
  * @Author: Ride-pig 327796210@qq.com
  * @Date: 2022-07-25 20:41:56
- * @LastEditors: DZR
- * @LastEditTime: 2022-08-04 16:07:02
- * @FilePath: \less-music\src\pages\Home\Main\FindMusic\LatestMusic\NewSongExpress\index.tsx
+ * @LastEditors: Ride-pig
+ * @LastEditTime: 2022-08-05 16:07:39
+ * @FilePath: \eee\less-music\src\pages\Home\Main\FindMusic\LatestMusic\NewSongExpress\index.tsx
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
 import { useCtxValue } from "@/hooks"
@@ -15,7 +15,6 @@ import { BsFillPlayFill } from "react-icons/bs"
 import Images from "../lazyLoad"
 
 export const NewSongExpress = () => {
-    // const [type, setType] = useState<number>(0)
     const { data: topSong, isLoading: topSongIsLoading } = useTopSongQuery(0)
     const topSongResult: any = useMemo(() => {
         if (topSong) {
@@ -39,7 +38,6 @@ export const NewSongExpress = () => {
             return "0" + minutes + ":" + seconds
         }
     }
-    // console.log(formatDuring(1659110400000))
 
     // 引入封装的播放音乐的hooks
     const { playMusic } = useCtxValue()
@@ -75,7 +73,7 @@ export const NewSongExpress = () => {
                         marginTop="1em"
                         onClick={() => play(item)}
                         transition="all .3s"
-                        width="86em"
+                        width="75em"
                     >
                         <Box fontSize="0.875em" fontWeight="900" textAlign="center" w="4em">
                             {index + 1}
@@ -86,7 +84,7 @@ export const NewSongExpress = () => {
                             fontSize="0.875em"
                             overflow="hidden"
                             textOverflow="ellipsis"
-                            w="52em"
+                            w="45em"
                             whiteSpace="nowrap"
                         >
                             <Center position="relative">
@@ -131,7 +129,7 @@ export const NewSongExpress = () => {
                         >
                             {item.album.name}
                         </Box>
-                        <Box fontSize="0.875em" w="8em">
+                        <Box fontSize="0.875em" w="4em">
                             {formatDuring(Number(item.duration))}
                         </Box>
                     </Box>

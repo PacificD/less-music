@@ -1,10 +1,10 @@
 /*
  * @Author: Giaruei
  * @Date: 2022-07-29 11:47:23
- * @LastEditTime: 2022-07-29 20:12:28
- * @LastEditors: Giaruei
+ * @LastEditTime: 2022-08-05 15:14:53
+ * @LastEditors: Ride-pig
  * @Description:
- * @FilePath: \less-music\src\pages\Comments\index.tsx
+ * @FilePath: \eee\less-music\src\pages\Comments\index.tsx
  */
 import { FC } from "react"
 import { Box } from "@chakra-ui/react"
@@ -18,7 +18,7 @@ const Comments: FC<IProps> = ({ comment, detailIsLoading }) => {
     const hotComments = comment.hotComments as any[]
     const newComments = comment.comments as any[]
     return (
-        <Box w="100%">
+        <Box w="1500px">
             {detailIsLoading ? (
                 <Box color="blue.400" fontSize="2xl" fontWeight="bold">
                     Loading ...

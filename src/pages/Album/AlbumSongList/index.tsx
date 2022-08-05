@@ -1,22 +1,19 @@
 /*
  * @Author: Ride-pig
- * @Date: 2022-08-04 20:38:26
- * @LastEditTime: 2022-08-05 16:33:41
+ * @Date: 2022-08-05 09:26:27
+ * @LastEditTime: 2022-08-05 15:24:23
  * @LastEditors: Ride-pig
- * @Description:歌单详情页的歌曲列表
- * @FilePath: \eee\less-music\src\pages\Playlist\Songlist\index.tsx
+ * @Description: 专辑的歌曲详情
+ * @FilePath: \eee\less-music\src\pages\Album\AlbumSongList\index.tsx
  */
-
 import { useCtxValue } from "@/hooks"
-import { Box, Flex, Text, VStack } from "@chakra-ui/react"
-import { FC } from "react"
+import { Box, Flex, VStack, Text } from "@chakra-ui/react"
+import React, { FC } from "react"
 import { AiOutlineDownload, AiOutlineHeart } from "react-icons/ai"
 
 interface IProps {
-    tracks: {
-        [key: string]: any
-    }
-    detailIsLoading: boolean
+    albumContentSongs: any
+    albumContentIsLoading: boolean
 }
 
 /**
@@ -35,7 +32,7 @@ function transTime(value: number): string {
     return time
 }
 
-const Songlist: FC<IProps> = ({ detailIsLoading, tracks }) => {
+const AlbumSongList: FC<IProps> = ({ albumContentSongs, albumContentIsLoading }) => {
     let songName: string
     let arName: string
     let alName: string
@@ -51,10 +48,11 @@ const Songlist: FC<IProps> = ({ detailIsLoading, tracks }) => {
             artists: item.ar
         })
     }
+
     return (
         <Box>
             <VStack>
-                {detailIsLoading ? (
+                {albumContentIsLoading ? (
                     <Text color="blue.400" fontSize="2xl" fontWeight="bold">
                         Loading ...
                     </Text>
@@ -70,7 +68,7 @@ const Songlist: FC<IProps> = ({ detailIsLoading, tracks }) => {
                             <Box w="10%">时间</Box>
                         </Flex>
                         <VStack>
-                            {(tracks as any[]).map((item: any, index: number) => (
+                            {albumContentSongs.map((item: any, index: number) => (
                                 <Flex
                                     _hover={{
                                         bg: "blue.200"
@@ -79,7 +77,7 @@ const Songlist: FC<IProps> = ({ detailIsLoading, tracks }) => {
                                     bg={index % 2 === 0 ? "blue.50" : "gray.100"}
                                     h="35px"
                                     key={item.id}
-                                    onClick={() => play(item)}
+                                    onClick={() => play(albumContentSongs[index])}
                                     overflow="hidden"
                                     textAlign="center"
                                     textOverflow="ellipsis"
@@ -142,4 +140,4 @@ const Songlist: FC<IProps> = ({ detailIsLoading, tracks }) => {
     )
 }
 
-export default Songlist
+export default AlbumSongList

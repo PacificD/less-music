@@ -1,8 +1,8 @@
 /*
  * @Author: Pacific_D
  * @Date: 2022-07-19 10:16:22
- * @LastEditTime: 2022-08-04 11:47:28
- * @LastEditors: Pacific_D
+ * @LastEditTime: 2022-08-04 20:57:06
+ * @LastEditors: Ride-pig
  * @Description:
  * @FilePath: \less-music\src\router\config\index.tsx
  */
@@ -28,6 +28,7 @@ import {
     PrivateFM,
     Playing
 } from "@/pages"
+import Album from "@/pages/Album"
 import { Password } from "@/pages/Login/password"
 import QrCode from "@/pages/Login/QR"
 import { Navigate, useRoutes } from "react-router-dom"
@@ -104,6 +105,10 @@ const RouterConfig = () => {
                 {
                     path: "playlist/:id",
                     element: <Playlist />
+                },
+                {
+                    path: "album/:id",
+                    element: <Album />
                 },
                 {
                     path: "podcast",
