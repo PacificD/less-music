@@ -1,7 +1,7 @@
 /*
  * @Author: Pacific_D
  * @Date: 2022-07-22 14:21:33
- * @LastEditTime: 2022-08-05 15:50:55
+ * @LastEditTime: 2022-08-08 20:28:50
  * @LastEditors: DZR
  * @Description:
  * @FilePath: \less-music\src\services\index.ts
@@ -31,3 +31,4 @@ export { default as useTopPlaylistQuery } from "./services/useTopPlaylistQuery"
 export { default as useLyric } from "./services/useLyric"
 export { default as useSongDetail } from "./services/useSongDetail"
 export { default as useSongComments } from "./services/useSongComments"
+export { default as useUserStatusQuery } from "./services/useUserStatusQuery"

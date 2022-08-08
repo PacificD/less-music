@@ -1,8 +1,21 @@
 /*
+ * @Author: Ride-pig
+ * @Date: 2022-08-04 20:38:26
+ * @LastEditTime: 2022-08-08 20:27:53
+ * @LastEditors: DZR
+ * @Description:
+ * @FilePath: \less-music\src\pages\Playlist\Songlist\index.tsx
+ */
+/*
  * @Author: Giaruei
  * @Date: 2022-07-26 20:07:07
+<<<<<<< HEAD
  * @LastEditTime: 2022-08-08 20:05:22
  * @LastEditors: DZR
+=======
+ * @LastEditTime: 2022-08-04 16:34:50
+ * @LastEditors: Giaruei
+>>>>>>> feature-cjr
  * @Description: 歌单详情页的歌曲列表
  * @FilePath: \less-music\src\pages\Playlist\Songlist\index.tsx
  */
@@ -75,7 +88,6 @@ const Songlist: FC<IProps> = ({ detailIsLoading, tracks }) => {
                                         bg: "blue.200"
                                     }}
                                     alignItems="center"
-                                    // bg="blue.50"
                                     bg={index % 2 === 0 ? "blue.50" : "gray.100"}
                                     h="35px"
                                     key={item.id}

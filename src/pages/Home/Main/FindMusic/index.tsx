@@ -1,14 +1,14 @@
 /*
  * @Author: DZR
  * @Date: 2022-07-22 11:06:37
- * @LastEditTime: 2022-08-04 11:45:16
- * @LastEditors: Pacific_D
+ * @LastEditTime: 2022-08-08 11:26:59
+ * @LastEditors: Giaruei
  * @Description:
  * @FilePath: \less-music\src\pages\Home\Main\FindMusic\index.tsx
  */
 import { Box, Center } from "@chakra-ui/react"
 import "../../../../style/index.css"
-import { Link, Navigate, Outlet, useNavigate } from "react-router-dom"
+import { Outlet, useNavigate } from "react-router-dom"
 import { useState } from "react"
 
 const FindMusic = () => {

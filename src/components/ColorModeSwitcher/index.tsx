@@ -1,8 +1,8 @@
 /*
  * @Author: Pacific_D
  * @Date: 2022-03-30 21:36:37
- * @LastEditTime: 2022-07-18 12:15:16
- * @LastEditors: Pacific_D
+ * @LastEditTime: 2022-08-08 11:58:57
+ * @LastEditors: Giaruei
  * @Description:
  * @FilePath: \less-music\src\components\ColorModeSwitcher\index.tsx
  */
@@ -20,7 +20,7 @@ const ColorModeSwitcher: FC<ColorModeSwitcherProps> = props => {
     return (
         <IconButton
             aria-label={`Switch to ${text} mode`}
-            color="current"
+            color="white"
             fontSize="lg"
             icon={<SwitchIcon />}
             marginLeft="2"

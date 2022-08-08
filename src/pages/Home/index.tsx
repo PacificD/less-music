@@ -1,16 +1,17 @@
 /*
  * @Author: Pacific_D
  * @Date: 2022-07-18 10:14:40
- * @LastEditTime: 2022-08-03 11:54:27
+ * @LastEditTime: 2022-08-08 11:39:12
  * @LastEditors: Giaruei
  * @Description:
  * @FilePath: \less-music\src\pages\Home\index.tsx
  */
 
-import React, { FC, useState } from "react"
+import React, { FC, useMemo, useState } from "react"
 import Header from "./Header"
 import Main from "./Main"
 import { Box } from "@chakra-ui/react"
+import { Playbar } from "@/components"
 
 export const msgContext = React.createContext(0)
 export const setMsgContext = React.createContext(
@@ -32,6 +33,7 @@ const Home: FC = () => {
                         <Box overflow="hidden">
                             <Header></Header>
                             <Main></Main>
+                            {/* <Playbar /> */}
                         </Box>
                     </setLastMsgContext.Provider>
                 </setMsgContext.Provider>

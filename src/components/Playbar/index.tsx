@@ -2,8 +2,13 @@
 /*
  * @Author: Pacific_D
  * @Date: 2022-07-23 15:58:35
+<<<<<<< HEAD
  * @LastEditTime: 2022-08-06 09:55:15
  * @LastEditors: DZR
+=======
+ * @LastEditTime: 2022-08-06 11:13:43
+ * @LastEditors: Giaruei
+>>>>>>> feature-cjr
  * @Description:
  * @FilePath: \less-music\src\components\Playbar\index.tsx
  */

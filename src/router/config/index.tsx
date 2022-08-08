@@ -1,8 +1,8 @@
 /*
  * @Author: Pacific_D
  * @Date: 2022-07-19 10:16:22
- * @LastEditTime: 2022-08-04 11:47:28
- * @LastEditors: Pacific_D
+ * @LastEditTime: 2022-08-05 09:52:29
+ * @LastEditors: Giaruei
  * @Description:
  * @FilePath: \less-music\src\router\config\index.tsx
  */
@@ -42,6 +42,10 @@ const RouterConfig = () => {
         {
             path: "/playing/:id",
             element: <Playing />
+        },
+        {
+            path: "/login",
+            element: <Navigate to="qrcode" />
         },
         {
             path: "/login",

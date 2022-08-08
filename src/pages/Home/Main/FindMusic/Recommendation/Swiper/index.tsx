@@ -1,8 +1,13 @@
 /*
  * @Author: DZR
  * @Date: 2022-07-23 11:00:44
+<<<<<<< HEAD
  * @LastEditTime: 2022-08-06 10:02:14
  * @LastEditors: DZR
+=======
+ * @LastEditTime: 2022-08-04 22:03:56
+ * @LastEditors: Giaruei
+>>>>>>> feature-cjr
  * @Description:轮播图
  * @FilePath: \less-music\src\pages\Home\Main\FindMusic\Recommendation\Swiper\index.tsx
  */
