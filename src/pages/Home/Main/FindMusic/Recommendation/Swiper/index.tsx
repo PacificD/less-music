@@ -1,8 +1,8 @@
 /*
  * @Author: DZR
  * @Date: 2022-07-23 11:00:44
- * @LastEditTime: 2022-08-04 19:59:47
- * @LastEditors: DZR
+ * @LastEditTime: 2022-08-04 22:03:56
+ * @LastEditors: Giaruei
  * @Description:轮播图
  * @FilePath: \less-music\src\pages\Home\Main\FindMusic\Recommendation\Swiper\index.tsx
  */
@@ -55,7 +55,6 @@ const Swiper: FC = () => {
             }
         }
     }, [location])
-
 
     return (
         <Box>

@@ -1,7 +1,15 @@
 /*
+ * @Author: Ride-pig
+ * @Date: 2022-08-04 20:38:26
+ * @LastEditTime: 2022-08-05 09:24:02
+ * @LastEditors: Giaruei
+ * @Description:
+ * @FilePath: \less-music\src\pages\Playlist\Songlist\index.tsx
+ */
+/*
  * @Author: Giaruei
  * @Date: 2022-07-26 20:07:07
- * @LastEditTime: 2022-08-04 10:48:51
+ * @LastEditTime: 2022-08-04 16:34:50
  * @LastEditors: Giaruei
  * @Description: 歌单详情页的歌曲列表
  * @FilePath: \less-music\src\pages\Playlist\Songlist\index.tsx
@@ -52,20 +60,20 @@ const Songlist: FC<IProps> = ({ detailIsLoading, tracks }) => {
     }
     return (
         <Box>
-            <VStack w="1000px">
+            <VStack>
                 {detailIsLoading ? (
                     <Text color="blue.400" fontSize="2xl" fontWeight="bold">
                         Loading ...
                     </Text>
                 ) : (
-                    <Flex cursor="default" direction="column">
-                        <Flex h="30px" textAlign="center" w="1000px">
+                    <Flex cursor="default" direction="column" mt="10px">
+                        <Flex h="30px" textAlign="center" w="1600px">
                             <Box ml="50px" w="50px">
                                 操作
                             </Box>
                             <Box w="25%">标题</Box>
                             <Box w="15%">歌手</Box>
-                            <Box w="15%">专辑</Box>
+                            <Box w="25%">专辑</Box>
                             <Box w="10%">时间</Box>
                         </Flex>
                         <VStack>
@@ -75,7 +83,6 @@ const Songlist: FC<IProps> = ({ detailIsLoading, tracks }) => {
                                         bg: "blue.200"
                                     }}
                                     alignItems="center"
-                                    // bg="blue.50"
                                     bg={index % 2 === 0 ? "blue.50" : "gray.100"}
                                     h="35px"
                                     key={item.id}
@@ -126,7 +133,7 @@ const Songlist: FC<IProps> = ({ detailIsLoading, tracks }) => {
                                         overflow="hidden"
                                         textOverflow="ellipsis"
                                         title={(alName = item.al.name)}
-                                        w="15%"
+                                        w="25%"
                                         whiteSpace="nowrap"
                                     >
                                         {alName}

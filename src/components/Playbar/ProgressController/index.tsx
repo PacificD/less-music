@@ -1,8 +1,8 @@
 /*
  * @Author: Pacific_D
  * @Date: 2022-07-25 11:41:32
- * @LastEditTime: 2022-08-04 19:33:45
- * @LastEditors: DZR
+ * @LastEditTime: 2022-08-06 11:06:38
+ * @LastEditors: Giaruei
  * @Description:
  * @FilePath: \less-music\src\components\Playbar\ProgressController\index.tsx
  */

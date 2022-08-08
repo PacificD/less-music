@@ -49,7 +49,7 @@ export const Password = () => {
     // 游客登录的点击事件
     function tourists() {
         request<IRes>("/register/anonimous", {}, METHODS.GET).then(function (res) {
-            sessionStorage.setItem("touristsCookie", res.data.cookie)
+            localStorage.setItem("cookie", res.data.cookie)
             navigate("/")
         })
     }

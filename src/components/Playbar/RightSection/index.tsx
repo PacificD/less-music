@@ -1,8 +1,8 @@
 /*
  * @Author: Pacific_D
  * @Date: 2022-07-25 16:26:13
- * @LastEditTime: 2022-08-04 19:30:41
- * @LastEditors: DZR
+ * @LastEditTime: 2022-08-05 09:42:22
+ * @LastEditors: Giaruei
  * @Description:
  * @FilePath: \less-music\src\components\Playbar\RightSection\index.tsx
  */
@@ -144,8 +144,10 @@ const RightSection: FC<IProps> = ({ mode, setMode, audioRef }) => {
                                 mb="1"
                                 onClick={() => setIsPlayList(false)}
                                 padding="16px"
+                                pos="relative"
                                 shadow="0 1px 2px rgb(128 128 128 / 35%)"
                                 w="full"
+                                zIndex="100"
                             >
                                 <Text>播放列表</Text>
                                 <CBsFillTrashFill

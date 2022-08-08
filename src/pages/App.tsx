@@ -1,8 +1,8 @@
 /*
  * @Author: Pacific_D
  * @Date: 2022-07-18 10:14:40
- * @LastEditTime: 2022-08-04 19:18:12
- * @LastEditors: DZR
+ * @LastEditTime: 2022-08-08 11:24:46
+ * @LastEditors: Giaruei
  * @Description:
  * @FilePath: \less-music\src\pages\App.tsx
  */
@@ -12,9 +12,10 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
 import "@/style/index.css"
 import { GoBack, Navbar, Playbar } from "@/components"
 import { Box } from "@chakra-ui/react"
-import { PlayingMusic, PlaylistAction } from "@/types"
+import { IRes, PlayingMusic, PlaylistAction } from "@/types"
 import initialSong from "./initialSong"
 import { playlistReducer } from "@/reducers"
+import { useUserStatusQuery } from "@/services"
 
 // TODO: 把CreateContext和Provider抽出一个文件，单独管理全局状态
 export const ctx = createContext<{
@@ -51,11 +52,11 @@ const App: FC = () => {
             payload: music
         })
     }
+
     return (
         <QueryClientProvider client={queryClient}>
             <ctx.Provider value={{ playingMusic, playlist, playlistDispatch, playMusic }}>
                 <Box position="relative">
-                    {/* <GoBack /> */}
                     {useMemo(
                         () => (
                             <ViewRouter />

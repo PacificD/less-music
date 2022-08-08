@@ -1,8 +1,8 @@
 /*
  * @Author: Pacific_D
  * @Date: 2022-07-23 15:58:35
- * @LastEditTime: 2022-07-30 11:26:38
- * @LastEditors: Pacific_D
+ * @LastEditTime: 2022-08-06 11:13:43
+ * @LastEditors: Giaruei
  * @Description:
  * @FilePath: \less-music\src\components\Playbar\index.tsx
  */

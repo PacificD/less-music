@@ -19,7 +19,7 @@
 }
 .imageBox {
     user-select: none;
-    transition: all 0.8s ease-in-out;
+    transition: all 0.5s ease-in-out;
     height: 12em;
 }
 
@@ -54,7 +54,7 @@ body {
 
 .imageBox {
     user-select: none;
-    transition: all 0.8s ease-in-out;
+    transition: all .4s ease-in-out;
     height: 12em;
 }
 
@@ -219,8 +219,6 @@ body {
 }
 .singerHotFiftySongs {
     background-color: skyblue;
-    /* position: absolute;
-    top: -140px; */
     width: 100%;
     overflow-y: scroll;
     z-index: 100;
