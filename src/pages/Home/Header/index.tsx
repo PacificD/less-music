@@ -3,7 +3,7 @@
  * @Date: 2022-07-20 09:30:37
 <<<<<<< HEAD
 <<<<<<< HEAD
- * @LastEditTime: 2022-08-08 20:41:55
+ * @LastEditTime: 2022-08-08 22:56:05
  * @LastEditors: DZR
  * @Description:
 =======
@@ -53,7 +53,8 @@ const CloudMusic = chakra(RiNeteaseCloudMusicFill)
  */
 async function logout() {
     const res = request<IRes>("/logout", { cookie: localStorage.getItem("cookie") }, METHODS.POST)
-    localStorage.clear()
+    localStorage.removeItem("cookie")
+    localStorage.removeItem("userId")
     return await res
 }
 
@@ -77,6 +78,9 @@ const Header: FC = () => {
     if (!isLoading) {
         if (!info.account.anonimousUser) {
             profile = info.profile
+            localStorage.setItem("userId", profile.userId)
+        } else if (info.account.anonimousUser) {
+            localStorage.setItem("userId", info.account.id)
         }
     }
     useEffect(() => {
@@ -87,16 +91,6 @@ const Header: FC = () => {
                 variant: "subtle",
                 position: "top",
                 status: "warning",
-                duration: 3000,
-                isClosable: true
-            })
-        } else if (!profile) {
-            toast({
-                title: "以游客状态登录了捏",
-                description: "点击右上角图标可以重新登录哦~",
-                variant: "subtle",
-                position: "top",
-                status: "success",
                 duration: 3000,
                 isClosable: true
             })
@@ -182,7 +176,7 @@ const Header: FC = () => {
                             <Box color="white">你是低等的游客状态</Box>
                         )
                     ) : (
-                        <Button onClick={() => navigate("login")}>点我登录</Button>
+                        <Button mr="3em" onClick={() => navigate("login")}>点我登录</Button>
                     )}
                     <ColorModeSwitcher />
                     <Center bg="transparent" className="logout" cursor="pointer" h="3em" w="3em">

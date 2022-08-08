@@ -1,18 +1,10 @@
 /*
  * @Author: Pacific_D
  * @Date: 2022-07-25 17:29:14
- * @LastEditTime: 2022-08-01 15:44:46
- * @LastEditors: Giaruei
+ * @LastEditTime: 2022-08-08 21:00:20
+ * @LastEditors: DZR
  * @Description:
  * @FilePath: \less-music\src\style\colors.ts
- */
-/*
- * @Author: Pacific_D
- * @Date: 2022-07-23 15:13:32
- * @LastEditTime: 2022-07-25 17:24:20
- * @LastEditors: Pacific_D
- * @Description:
- * @FilePath: \lessMusic\src\style\colors.ts
  */
 const colors = {
     theme: {

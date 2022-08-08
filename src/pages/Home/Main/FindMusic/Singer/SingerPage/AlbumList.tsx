@@ -1,7 +1,7 @@
 /*
  * @Author: DZR
  * @Date: 2022-07-30 15:49:51
- * @LastEditTime: 2022-08-05 11:51:29
+ * @LastEditTime: 2022-08-08 21:28:22
  * @LastEditors: DZR
  * @Description: 歌手详情页中的专辑页面（热门50首歌下的专辑组件）
  * @FilePath: \less-music\src\pages\Home\Main\FindMusic\Singer\SingerPage\AlbumList.tsx
@@ -16,8 +16,10 @@ import { useMemo } from "react"
 import { AiOutlineFolderAdd, AiOutlineHeart, AiOutlinePlayCircle } from "react-icons/ai"
 import { BsDownload } from "react-icons/bs"
 import { calculateDuration } from "@/utils"
+import { useNavigate } from "react-router-dom"
 
 const AlbumList = (props: any) => {
+    const navigate = useNavigate()
     const { data: albumDetails, isLoading: albumIsLoading } = useAlbumDetails(props.msg)
     const Albums = useMemo(() => {
         if (albumDetails) {
@@ -45,7 +47,14 @@ const AlbumList = (props: any) => {
                 Albums.map((item: any, index: number) => {
                     return (
                         <Flex key={index} mt="50px">
-                            <Box fontSize={20} h="170px" w="190px">
+                            <Box
+                                fontSize={20}
+                                h="170px"
+                                onClick={() => {
+                                    navigate("/album/" + item.album.id)
+                                }}
+                                w="190px"
+                            >
                                 <Image sizes="100%" src={item.album.blurPicUrl} />
                             </Box>
                             <Box ml="70px" w="100%">

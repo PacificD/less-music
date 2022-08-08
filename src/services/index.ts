@@ -1,14 +1,9 @@
 /*
  * @Author: Pacific_D
  * @Date: 2022-07-22 14:21:33
-<<<<<<< HEAD
- * @LastEditTime: 2022-08-08 20:36:52
+ * @LastEditTime: 2022-08-08 21:34:21
  * @LastEditors: DZR
-=======
- * @LastEditTime: 2022-08-08 11:46:01
- * @LastEditors: Ride-pig
->>>>>>> feature-ljp
- * @Description:
+ * @Description:默认导出自定义hooks
  * @FilePath: \less-music\src\services\index.ts
  */
 export { default as usePlaylistDetailQuery } from "./services/usePlaylistDetailQuery"

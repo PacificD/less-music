@@ -1,10 +1,10 @@
 /*
  * @Author: Ride-pig
  * @Date: 2022-08-06 10:05:37
- * @LastEditTime: 2022-08-08 16:40:06
+ * @LastEditTime: 2022-08-08 22:47:08
  * @LastEditors: Ride-pig
  * @Description: 个性推荐页面的推荐歌单的制作
- * @FilePath: \eee\less-music\src\pages\Home\Main\FindMusic\Recommendation\RecommendationList\index.tsx
+ * @FilePath: \less-music\src\pages\Home\Main\FindMusic\Recommendation\RecommendationList\index.tsx
  */
 
 import { LoadingTwo } from "@/components"
@@ -79,9 +79,8 @@ const RecommendationList: FC = () => {
                 <Box
                     cursor="pointer"
                     h="16em"
-                    //这里用户登录之后将1475704935这个id切换成用户的id
                     onClick={() => {
-                        navigate(`/dailysong/${1475704935}`)
+                        navigate(`/dailysong/${localStorage.getItem("userId")}`)
                     }}
                     position="relative"
                     w="10em"
