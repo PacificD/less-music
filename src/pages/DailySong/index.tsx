@@ -1,10 +1,10 @@
 /*
  * @Author: Ride-pig
  * @Date: 2022-08-08 11:38:44
- * @LastEditTime: 2022-08-08 16:47:17
- * @LastEditors: Ride-pig
+ * @LastEditTime: 2022-08-08 22:59:57
+ * @LastEditors: DZR
  * @Description: 每日推荐歌单的制作
- * @FilePath: \eee\less-music\src\pages\DailySong\index.tsx
+ * @FilePath: \less-music\src\pages\DailySong\index.tsx
  */
 import { useCtxValue } from "@/hooks"
 import { useDailySongQuery } from "@/services"
@@ -30,6 +30,8 @@ const DailySong: FC = () => {
         }
     }, [dailySong])
 
+    console.log(dailySong)
+    
     const { playMusic, playlistDispatch } = useCtxValue()
 
     const playAll = () => {
@@ -101,7 +103,7 @@ const DailySong: FC = () => {
                     收藏全部
                 </Flex>
             </Flex>
-            <Box>
+            <Box height="39em" overflowY="scroll">
                 <AlbumSongList
                     albumContentIsLoading={dailySongIsLoading}
                     albumContentSongs={dailySongResult}

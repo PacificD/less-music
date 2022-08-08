@@ -3,7 +3,7 @@
  * @Date: 2022-07-23 11:00:44
 <<<<<<< HEAD
 <<<<<<< HEAD
- * @LastEditTime: 2022-08-06 10:02:14
+ * @LastEditTime: 2022-08-08 21:57:43
  * @LastEditors: DZR
 =======
  * @LastEditTime: 2022-08-04 22:03:56
@@ -79,7 +79,7 @@ const Swiper: FC = () => {
                         ></BiChevronLeft>
                     </Circle>
                     {bannerIsLoading ? (
-                        <Box fontSize={200}>isLoading</Box>
+                        <Box color="white">isLoading</Box>
                     ) : (
                         location.map((item, index) => {
                             return (
