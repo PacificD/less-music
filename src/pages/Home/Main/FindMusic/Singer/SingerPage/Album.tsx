@@ -1,7 +1,7 @@
 /*
  * @Author: DZR
  * @Date: 2022-07-29 17:02:30
- * @LastEditTime: 2022-08-04 17:29:47
+ * @LastEditTime: 2022-08-05 11:50:50
  * @LastEditors: DZR
  * @Description:歌手详情页中的专辑页面（显示热门50首歌的组件）
  * @FilePath: \less-music\src\pages\Home\Main\FindMusic\Singer\SingerPage\Album.tsx
@@ -38,6 +38,8 @@ const Album = () => {
     }, [songs])
     const [on, setOn] = useState(true)
     const { playMusic } = useCtxValue()
+
+    //console.log(playMusic)
     const play = (item: any) => {
         playMusic({
             id: item.id,
@@ -70,7 +72,7 @@ const Album = () => {
                         <AiOutlineFolderAdd color="gray" fontSize="1.5em" />
                     </Flex>
                     <Box>
-                        {songsIsloading ? (
+                        {songsIsloading || !Details ? (
                             <Box fontSize={100}>Loading</Box>
                         ) : (
                             Details.map((item: any, index: number) => {

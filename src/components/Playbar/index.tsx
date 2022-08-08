@@ -1,13 +1,14 @@
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
 /*
  * @Author: Pacific_D
  * @Date: 2022-07-23 15:58:35
- * @LastEditTime: 2022-07-30 11:26:38
- * @LastEditors: Pacific_D
+ * @LastEditTime: 2022-08-06 09:55:15
+ * @LastEditors: DZR
  * @Description:
  * @FilePath: \less-music\src\components\Playbar\index.tsx
  */
 import { Box, Flex, Text, useColorModeValue, useToast } from "@chakra-ui/react"
-import { FC, useMemo, useRef, useState } from "react"
+import { createContext, FC, useMemo, useRef, useState } from "react"
 import MainButton from "./MainButton"
 import ProgressController from "./ProgressController"
 import SongInfo from "./SongInfo"
@@ -16,16 +17,18 @@ import { useMusicUrlQuery } from "@/services"
 import { IRes, PlayingMusic } from "@/types"
 import { calculateDuration, formatPlayTime } from "@/utils"
 import { useCtxValue } from "@/hooks"
+import { useEffect } from "react"
 
 /**
  * @description: 底部音乐控件：播放进度，音量，呼出播放列表等
  * @return {*}
  */
-const Playbar: FC = () => {
+
+const Playbar = () => {
     const bg = useColorModeValue("white", "darkMode"),
         [currentTime, setCurrentTime] = useState(0),
         [mode, setMode] = useState<number>(0),
-        { playlist, playMusic, playingMusic } = useCtxValue(),
+        { playlist, playMusic, playingMusic, setCurrentPlayTime } = useCtxValue(),
         toast = useToast(),
         initial = useRef(true)
 
@@ -65,6 +68,9 @@ const Playbar: FC = () => {
         setCurrentTime(Math.round(e.target!.currentTime))
     }
 
+    useEffect(() => {
+        setCurrentPlayTime(currentTime)
+    }, [currentTime, setCurrentPlayTime])
     /**
      * @description: 资源加载完毕的回调
      * @return {*}
@@ -145,7 +151,10 @@ const Playbar: FC = () => {
         })
     }
 
+    // currentPlayTime = currentTime
+
     return (
+        //<PlayTimeContext.Provider value={{ time: currentTime }}>
         <Box bottom={0} h="60px" position="fixed" w="full">
             <audio
                 className="audio"
@@ -175,6 +184,7 @@ const Playbar: FC = () => {
             >
                 <SongInfo
                     cover={playingMusic.cover}
+                    id={playingMusic.id}
                     name={playingMusic.name}
                     singerInfo={playingMusic.artists}
                 />
@@ -195,6 +205,7 @@ const Playbar: FC = () => {
                 )}
             </Flex>
         </Box>
+        //</PlayTimeContext.Provider>
     )
 }
 

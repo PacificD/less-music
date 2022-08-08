@@ -1,8 +1,8 @@
 /*
  * @Author: Pacific_D
  * @Date: 2022-07-25 20:58:33
- * @LastEditTime: 2022-08-04 11:46:05
- * @LastEditors: Pacific_D
+ * @LastEditTime: 2022-08-05 15:43:09
+ * @LastEditors: DZR
  * @Description:
  * @FilePath: \less-music\src\pages\MV\index.tsx
  */
@@ -18,20 +18,19 @@ const MV: FC = () => {
     const { id } = useParams(),
         [radioWithUrl, setRadioWithUrl] = useState<Array<[number, string]>>([])
 
-    const { data: mvDetail, isLoading } = useMVDetailQuery(+id!),
+    const { data: mvDetail, isLoading: mvDetailIsLoading } = useMVDetailQuery(+id!),
         [, renderer] = useState(0)
 
     const MVPlayer = useRef<Player | null>(null)
 
     useEffect(() => {
-        if (mvDetail && !isLoading) {
+        if (mvDetail && !mvDetailIsLoading) {
             setRadioWithUrl((mvDetail as MVDetail).urls)
         }
-    }, [mvDetail, isLoading])
+    }, [mvDetail, mvDetailIsLoading])
 
     useEffect(() => {
         if (radioWithUrl.length !== 0 && MVPlayer.current === null) {
-            //console.log(radioWithUrl)
             MVPlayer.current = new Player({
                 id: "MVPlayer",
                 url: radioWithUrl[radioWithUrl.length - 1][1],

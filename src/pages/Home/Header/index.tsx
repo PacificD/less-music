@@ -1,12 +1,12 @@
 /*
  * @Author: DZR
  * @Date: 2022-07-20 09:30:37
- * @LastEditTime: 2022-08-04 11:45:10
- * @LastEditors: Pacific_D
+ * @LastEditTime: 2022-08-08 19:28:09
+ * @LastEditors: DZR
  * @Description:
  * @FilePath: \less-music\src\pages\Home\Header\index.tsx
  */
-import { lastMsgContext, msgContext, setLastMsgContext, setMsgContext } from ".."
+import { lastMsgContext, setMsgContext } from ".."
 
 import { Box, Center, chakra, Circle, Input, Spacer, Square, Text } from "@chakra-ui/react"
 import { FC, useContext } from "react"
@@ -18,9 +18,7 @@ const CloudMusic = chakra(RiNeteaseCloudMusicFill)
 
 const Header: FC = () => {
     const lastMsg = useContext(lastMsgContext)
-    const msg = useContext(msgContext)
     const setMsg = useContext(setMsgContext)
-    const setLastMsg = useContext(setLastMsgContext)
     const navigate = useNavigate()
     return (
         <Center>
@@ -42,7 +40,6 @@ const Header: FC = () => {
                             cursor="pointer"
                             fontSize="1.5em"
                             onClick={() => {
-                                console.log(msg, lastMsg)
                                 navigate(-1)
                                 setMsg(lastMsg[lastMsg.length - 2])
                                 lastMsg.pop()

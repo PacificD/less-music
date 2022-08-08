@@ -1,16 +1,3 @@
-.boxStyle {
-    width: 15em;
-    height: 2em;
-    font-size: 1em;
-    padding: 4px 0 4px 15px;
-    margin: 2px;
-    margin-left: 7px;
-}
-
-.boxStyle:hover {
-    background-color: #f6f6f7;
-    cursor: pointer;
-}
 .leftBox {
     background-color: #ffffff;
     height: 52em;
@@ -19,10 +6,9 @@
 }
 .imageBox {
     user-select: none;
-    transition: all 0.8s ease-in-out;
+    transition: all 0.4s ease-in-out;
     height: 12em;
 }
-
 body {
     overflow: hidden;
 }
@@ -30,6 +16,9 @@ body {
 .recommendationLink {
     margin: 10px 20px;
 }
+.recommendationLink:focus {
+    color: #2b6cb0;
+}
 
 .boxStyle {
     width: 15em;
@@ -43,19 +32,6 @@ body {
 .boxStyle:hover {
     background-color: #f6f6f7;
     cursor: pointer;
-}
-
-.leftBox {
-    background-color: #ffffff;
-    height: 52em;
-    width: 19.5em;
-    border-right: 1px lightgray solid;
-}
-
-.imageBox {
-    user-select: none;
-    transition: all 0.8s ease-in-out;
-    height: 12em;
 }
 
 .middle {
@@ -175,9 +151,6 @@ body {
     border-radius: 10px;
     background: #e0e0e0;
 }
-body {
-    overflow: hidden;
-}
 .transparentLine {
     width: 2px;
     height: 15px;
@@ -201,22 +174,11 @@ body {
     width: 35px;
     font-size: small;
 }
-.singerP {
-    height: 20px;
-    width: 35px;
-    font-size: small;
-    margin-left: 113px;
-}
 .singerName {
     font-size: small;
     margin-left: 20px;
 }
-.recommendationLink {
-    margin: 10px 20px;
-}
-.recommendationLink:focus {
-    color: #2b6cb0;
-}
+
 .singerHotFiftySongs {
     background-color: skyblue;
     /* position: absolute;
@@ -245,12 +207,12 @@ body {
     background-color: lightgray;
     margin: 5px 10px;
 }
-.topFiftySong{
+.topFiftySong {
     position: relative;
     height: 30px;
     padding: 4px 10px;
 }
-.topFiftySong:hover{
+.topFiftySong:hover {
     background-color: rgb(233, 233, 233);
 }
 .heartIcon {
@@ -258,13 +220,13 @@ body {
     color: gray;
     cursor: pointer;
 }
-.singerPageLink{
+.singerPageLink {
     margin: 0 10px;
 }
-.singersDetails{
+.singersDetails {
     white-space: pre-wrap;
 }
-.MVbutton{
+.MVbutton {
     width: 100px;
     height: 30px;
     border: 1px solid gray;
@@ -273,9 +235,9 @@ body {
     border-radius: 20px;
     margin: 20px 5px;
 }
-.playingAlbum{
-    animation: playingAlbum 10s linear infinite;
-    -webkit-animation: playingAlbum 10s linear infinite;
+.playingAlbum {
+    animation: playingAlbum 40s linear infinite;
+    -webkit-animation: playingAlbum 40s linear infinite;
     background-color: lightgray;
 }
 @keyframes playingAlbum {
@@ -295,4 +257,32 @@ body {
     100% {
         transform: rotate(360deg);
     }
+}
+.lyric {
+    height: 25em;
+    margin-top: 8em;
+    padding-top: 180px;
+    padding-bottom: 180px;
+    position: relative;
+    right: 0;
+    width: 25em;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    white-space: pre-wrap;
+    scroll-behavior: smooth;
+}
+.lyricMiddle {
+    height: 40px;
+    width: 480px;
+    text-align: center;
+    font-size: large;
+    font-weight: bold;
+    transition: all 0ms;
+    color: #2b6cb0;
+}
+.lyricBox{
+    height: 40px;
+    width: 480px;
+    text-align: center;
+    transition: all 0ms;
 }

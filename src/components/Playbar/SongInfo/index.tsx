@@ -1,8 +1,8 @@
 /*
  * @Author: Pacific_D
  * @Date: 2022-07-25 11:44:26
- * @LastEditTime: 2022-07-30 11:26:16
- * @LastEditors: Pacific_D
+ * @LastEditTime: 2022-08-05 10:28:52
+ * @LastEditors: DZR
  * @Description:
  * @FilePath: \less-music\src\components\Playbar\SongInfo\index.tsx
  */
@@ -17,6 +17,7 @@ interface IProps {
     cover: string
     name: string
     singerInfo: Artist | Array<Artist>
+    id: number
 }
 
 /**
@@ -26,7 +27,8 @@ interface IProps {
  * @param {string | Array<string>} singerInfo - 歌手
  * @return {*}
  */
-const SongInfo: FC<IProps> = ({ cover, name, singerInfo }) => {
+const SongInfo: FC<IProps> = ({ cover, name, singerInfo, id }) => {
+    //console.log(id)
     const singerList: Array<Artist> = useMemo(
             () => (Array.isArray(singerInfo) ? singerInfo : [singerInfo]),
             [singerInfo]
@@ -36,7 +38,7 @@ const SongInfo: FC<IProps> = ({ cover, name, singerInfo }) => {
         location = useLocation()
 
     const togglePlaying = () => {
-        location.pathname.indexOf("playing") === 1 ? navigate(-1) : navigate("/playing/38689014")
+        location.pathname.indexOf("playing") === 1 ? navigate(-1) : navigate("/playing/" + id)
     }
 
     return (

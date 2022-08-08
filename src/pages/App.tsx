@@ -1,12 +1,12 @@
 /*
  * @Author: Pacific_D
  * @Date: 2022-07-18 10:14:40
- * @LastEditTime: 2022-08-04 19:18:12
+ * @LastEditTime: 2022-08-08 15:10:34
  * @LastEditors: DZR
  * @Description:
  * @FilePath: \less-music\src\pages\App.tsx
  */
-import { FC, createContext, useMemo, useReducer, useRef, useState } from "react"
+import { FC, createContext, useMemo, useReducer, useRef, useState, SetStateAction } from "react"
 import ViewRouter from "@/router/ViewRouter"
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
 import "@/style/index.css"
@@ -22,6 +22,8 @@ export const ctx = createContext<{
     playlist: Array<PlayingMusic>
     playlistDispatch: React.Dispatch<PlaylistAction>
     playMusic: (music: PlayingMusic) => void
+    currentPlayTime: number
+    setCurrentPlayTime: React.Dispatch<number>
 }>({} as any)
 
 /**
@@ -36,6 +38,8 @@ const App: FC = () => {
             }
         }
     })
+
+    const [currentPlayTime, setCurrentPlayTime] = useReducer((last: number, now: number) => now, 0)
 
     const [playingMusic, setPlayingMusic] = useReducer(
         (playingMusic: PlayingMusic, newMusic: PlayingMusic) => newMusic,
@@ -53,7 +57,16 @@ const App: FC = () => {
     }
     return (
         <QueryClientProvider client={queryClient}>
-            <ctx.Provider value={{ playingMusic, playlist, playlistDispatch, playMusic }}>
+            <ctx.Provider
+                value={{
+                    playingMusic,
+                    playlist,
+                    playlistDispatch,
+                    playMusic,
+                    currentPlayTime,
+                    setCurrentPlayTime
+                }}
+            >
                 <Box position="relative">
                     {/* <GoBack /> */}
                     {useMemo(

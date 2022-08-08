@@ -1,7 +1,7 @@
 /*
  * @Author: DZR
  * @Date: 2022-07-30 15:49:51
- * @LastEditTime: 2022-08-04 17:11:23
+ * @LastEditTime: 2022-08-05 11:51:29
  * @LastEditors: DZR
  * @Description: 歌手详情页中的专辑页面（热门50首歌下的专辑组件）
  * @FilePath: \less-music\src\pages\Home\Main\FindMusic\Singer\SingerPage\AlbumList.tsx
@@ -39,7 +39,7 @@ const AlbumList = (props: any) => {
 
     return (
         <Box>
-            {albumIsLoading ? (
+            {albumIsLoading || !Albums ? (
                 <Box fontSize={50}>loading</Box>
             ) : (
                 Albums.map((item: any, index: number) => {

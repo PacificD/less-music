@@ -1,7 +1,7 @@
 /*
  * @Author: DZR
  * @Date: 2022-07-28 16:37:11
- * @LastEditTime: 2022-07-29 20:04:57
+ * @LastEditTime: 2022-08-05 09:54:35
  * @LastEditors: DZR
  * @Description:
  * @FilePath: \less-music\src\pages\Home\Main\FindMusic\Singer\SingerClassify.tsx
@@ -48,10 +48,7 @@ const SingerClassify = () => {
                 {alphabet.map((item, index) => {
                     return (
                         <Flex key={index + 10}>
-                            <button
-                                className={item === "P" ? "singerP" : "singerAlphabet"}
-                                key={index + 20}
-                            >
+                            <button className="singerAlphabet" key={index + 20}>
                                 {item}
                             </button>
                             <span className="transparentLine" key={index + 30}></span>
