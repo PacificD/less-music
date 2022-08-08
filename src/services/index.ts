@@ -1,8 +1,13 @@
 /*
  * @Author: Pacific_D
  * @Date: 2022-07-22 14:21:33
- * @LastEditTime: 2022-08-08 20:28:50
+<<<<<<< HEAD
+ * @LastEditTime: 2022-08-08 20:36:52
  * @LastEditors: DZR
+=======
+ * @LastEditTime: 2022-08-08 11:46:01
+ * @LastEditors: Ride-pig
+>>>>>>> feature-ljp
  * @Description:
  * @FilePath: \less-music\src\services\index.ts
  */
@@ -32,3 +37,7 @@ export { default as useLyric } from "./services/useLyric"
 export { default as useSongDetail } from "./services/useSongDetail"
 export { default as useSongComments } from "./services/useSongComments"
 export { default as useUserStatusQuery } from "./services/useUserStatusQuery"
+export { default as useAlbumContentQuery } from "./services/useAlbumContentQuery"
+export { default as useAlbumCommentQuery } from "./services/useAlbumCommentQuery"
+export { default as usePersonalizedQuery } from "./services/usePersonalizedQuery"
+export { default as useDailySongQuery } from "./services/useDailySongQuery"

@@ -2,7 +2,8 @@
  * @Author: DZR
  * @Date: 2022-07-20 09:30:37
 <<<<<<< HEAD
- * @LastEditTime: 2022-08-08 19:28:09
+<<<<<<< HEAD
+ * @LastEditTime: 2022-08-08 20:41:55
  * @LastEditors: DZR
  * @Description:
 =======
@@ -11,6 +12,12 @@
  * @Description: 页面的Header 判断登录的状态
 >>>>>>> feature-cjr
  * @FilePath: \less-music\src\pages\Home\Header\index.tsx
+=======
+ * @LastEditTime: 2022-08-08 19:36:08
+ * @LastEditors: Ride-pig
+ * @Description:
+ * @FilePath: \eee\less-music\src\pages\Home\Header\index.tsx
+>>>>>>> feature-ljp
  */
 import { lastMsgContext, setMsgContext } from ".."
 
@@ -36,6 +43,7 @@ import { ColorModeSwitcher } from "@/components"
 import request from "@/services/request"
 import { IRes, METHODS } from "@/types"
 import { useUserStatusQuery } from "@/services"
+import { BiMicrophone } from "react-icons/bi"
 
 const CloudMusic = chakra(RiNeteaseCloudMusicFill)
 
@@ -106,7 +114,14 @@ const Header: FC = () => {
                         fontSize="2em"
                         m="0.5em"
                     />
-                    <Text color="white" cursor="pointer" fontSize="xl" marginRight="3em">
+                    <Text
+                        color="white"
+                        cursor="pointer"
+                        fontSize="xl"
+                        marginBottom="4px"
+                        marginRight="3em"
+                        onClick={() => navigate("/")}
+                    >
                         网易云音乐
                     </Text>
                     <Circle bg="blackAlpha.200">
@@ -170,15 +185,30 @@ const Header: FC = () => {
                         <Button onClick={() => navigate("login")}>点我登录</Button>
                     )}
                     <ColorModeSwitcher />
-                    <RiLoginBoxLine
-                        color="white"
-                        cursor="pointer"
-                        fontSize="1.5em"
-                        onClick={() => {
-                            logout()
-                            navigate("/")
-                        }}
-                    ></RiLoginBoxLine>
+                    <Center bg="transparent" className="logout" cursor="pointer" h="3em" w="3em">
+                        <RiLoginBoxLine
+                            color="white"
+                            cursor="pointer"
+                            fontSize="1.5em"
+                            onClick={() => {
+                                logout()
+                                navigate("/")
+                            }}
+                        ></RiLoginBoxLine>
+                    </Center>
+                    <Center
+                        bg="#fff"
+                        borderRadius="1em"
+                        className="show"
+                        h="2em"
+                        opacity="0"
+                        position="fixed"
+                        right="3em"
+                        w="6em"
+                        zIndex="44"
+                    >
+                        退出登录
+                    </Center>
                 </Center>
             </Box>
         </Center>

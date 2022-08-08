@@ -13,7 +13,6 @@ body {
 .recommendationLink:focus {
     color: #2b6cb0;
 }
-
 .boxStyle {
     width: 15em;
     height: 2em;
@@ -22,7 +21,6 @@ body {
     margin: 2px;
     margin-left: 7px;
 }
-
 .boxStyle:hover {
     background-color: #f6f6f7;
     cursor: pointer;
@@ -34,16 +32,12 @@ body {
     width: 19.5em;
     border-right: 1px lightgray solid;
 }
-
-
-
 .middle {
     top: 0%;
     left: 25%;
     width: 50%;
     z-index: 33;
 }
-
 .right {
     top: 9%;
     left: 50%;

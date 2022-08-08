@@ -1,9 +1,9 @@
 /*
  * @Author: Ride-pig 327796210@qq.com
  * @Date: 2022-07-29 10:42:38
- * @LastEditors: DZR
- * @LastEditTime: 2022-08-04 16:06:32
- * @FilePath: \less-music\src\pages\Home\Main\FindMusic\LatestMusic\NewDiscs\index.tsx
+ * @LastEditors: Ride-pig
+ * @LastEditTime: 2022-08-08 10:28:37
+ * @FilePath: \eee\less-music\src\pages\Home\Main\FindMusic\LatestMusic\NewDiscs\index.tsx
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
 import { LoadingTwo } from "@/components"
@@ -14,6 +14,7 @@ import { IRes, METHODS } from "@/types"
 import { Box, Center, Circle, Flex, Grid, Image } from "@chakra-ui/react"
 import React, { useMemo } from "react"
 import { BsFillPlayFill } from "react-icons/bs"
+import { useNavigate } from "react-router-dom"
 import "../../index.css"
 import Images from "../lazyLoad"
 import background from "./background.png"
@@ -38,17 +39,31 @@ export const NewDiscs = () => {
     }
     //能获取到专辑的信息
 
-    const { playMusic } = useCtxValue()
+    const { playMusic, playlistDispatch } = useCtxValue()
 
-    const play = (item: any) => {
+    const playAll = (param: any) => {
+        playlistDispatch({
+            type: "ADD",
+            payload: param.map((item: any, index: number) => {
+                return {
+                    id: item.id,
+                    name: item.name,
+                    cover: item.al.picUrl,
+                    duration: item.dt,
+                    artists: item.ar
+                }
+            })
+        })
         playMusic({
-            id: item.album.id,
-            name: item.album.name,
-            cover: item.album.picUrl,
-            duration: item.songs[0].dt,
-            artists: item.album.artists
+            id: param[0].id,
+            name: param[0].name,
+            cover: param[0].al.picUrl,
+            duration: param[0].dt,
+            artists: param[0].ar
         })
     }
+
+    const navigate = useNavigate()
 
     return (
         <Box display="flex" flexWrap="wrap" h="44em" justifyContent="center">
@@ -64,17 +79,23 @@ export const NewDiscs = () => {
                     newDiscsResult.map((item: any, index: number) => (
                         <Box h="16em" key={item.id} w="10em">
                             <Center h="10em" position="relative" w="10em">
-                                <Images
+                                <Images src={newDiscsResult[index].picUrl}></Images>
+                                <Box
                                     className="imageNew"
-                                    src={newDiscsResult[index].picUrl}
-                                ></Images>
+                                    h="10em"
+                                    onClick={() => {
+                                        navigate(`/album/${item.id}`)
+                                    }}
+                                    position="absolute"
+                                    w="10em"
+                                ></Box>
                                 <Circle
                                     bgColor="#fff"
                                     className="circle"
-                                    // 这里点击的时候能播放专辑的音乐
+                                    // 这里点击的时候能播放专辑的全部音乐
                                     onClick={() =>
                                         getAlbum(newDiscsResult[index].id).then(res =>
-                                            play(res as IRes)
+                                            playAll((res as IRes).songs)
                                         )
                                     }
                                     opacity="0"

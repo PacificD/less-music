@@ -1,10 +1,15 @@
 /*
  * @Author: Pacific_D
  * @Date: 2022-07-19 10:16:22
+<<<<<<< HEAD
  * @LastEditTime: 2022-08-05 09:52:29
  * @LastEditors: Giaruei
+=======
+ * @LastEditTime: 2022-08-08 16:29:52
+ * @LastEditors: Ride-pig
+>>>>>>> feature-ljp
  * @Description:
- * @FilePath: \less-music\src\router\config\index.tsx
+ * @FilePath: \eee\less-music\src\router\config\index.tsx
  */
 import {
     Home,
@@ -28,6 +33,9 @@ import {
     PrivateFM,
     Playing
 } from "@/pages"
+import Album from "@/pages/Album"
+import DailySong from "@/pages/DailySong"
+
 import { Password } from "@/pages/Login/password"
 import QrCode from "@/pages/Login/QR"
 import { Navigate, useRoutes } from "react-router-dom"
@@ -108,6 +116,14 @@ const RouterConfig = () => {
                 {
                     path: "playlist/:id",
                     element: <Playlist />
+                },
+                {
+                    path: "dailysong/:id",
+                    element: <DailySong />
+                },
+                {
+                    path: "album/:id",
+                    element: <Album />
                 },
                 {
                     path: "podcast",

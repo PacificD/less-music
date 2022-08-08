@@ -2,14 +2,19 @@
  * @Author: DZR
  * @Date: 2022-07-23 11:00:44
 <<<<<<< HEAD
+<<<<<<< HEAD
  * @LastEditTime: 2022-08-06 10:02:14
  * @LastEditors: DZR
 =======
  * @LastEditTime: 2022-08-04 22:03:56
  * @LastEditors: Giaruei
 >>>>>>> feature-cjr
+=======
+ * @LastEditTime: 2022-08-06 10:01:36
+ * @LastEditors: Ride-pig
+>>>>>>> feature-ljp
  * @Description:轮播图
- * @FilePath: \less-music\src\pages\Home\Main\FindMusic\Recommendation\Swiper\index.tsx
+ * @FilePath: \eee\less-music\src\pages\Home\Main\FindMusic\Recommendation\Swiper\index.tsx
  */
 import { useBanner } from "@/services"
 import { Box, Circle, Image, Center } from "@chakra-ui/react"
