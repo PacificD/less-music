@@ -1,7 +1,7 @@
 /*
  * @Author: Pacific_D
  * @Date: 2022-07-22 14:21:33
- * @LastEditTime: 2022-08-05 09:57:26
+ * @LastEditTime: 2022-08-08 11:46:01
  * @LastEditors: Ride-pig
  * @Description:
  * @FilePath: \eee\less-music\src\services\index.ts
@@ -30,3 +30,5 @@ export { default as usePhoneLoginQuery } from "./services/usePhoneLoginQuery"
 export { default as useTopPlaylistQuery } from "./services/useTopPlaylistQuery"
 export { default as useAlbumContentQuery } from "./services/useAlbumContentQuery"
 export { default as useAlbumCommentQuery } from "./services/useAlbumCommentQuery"
+export { default as usePersonalizedQuery } from "./services/usePersonalizedQuery"
+export { default as useDailySongQuery } from "./services/useDailySongQuery"

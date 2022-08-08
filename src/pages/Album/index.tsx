@@ -1,7 +1,7 @@
 /*
  * @Author: Ride-pig
  * @Date: 2022-08-04 20:53:38
- * @LastEditTime: 2022-08-05 15:29:48
+ * @LastEditTime: 2022-08-08 16:25:42
  * @LastEditors: Ride-pig
  * @Description: 专辑页面的制作
  * @FilePath: \eee\less-music\src\pages\Album\index.tsx
@@ -12,7 +12,6 @@ import { Box, Flex, Grid, HStack, VStack } from "@chakra-ui/react"
 import React, { FC, useMemo, useState } from "react"
 import { useParams } from "react-router-dom"
 import Comments from "../Comments"
-// import AlbumComment from "./AlbumInformation"
 import AlbumDetail from "./AlbumDetail"
 import AlbumSongList from "./AlbumSongList"
 import AlbumInformation from "./AlbumInformation"

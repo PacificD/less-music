@@ -1,10 +1,10 @@
 /*
  * @Author: Pacific_D
  * @Date: 2022-07-19 10:16:22
- * @LastEditTime: 2022-08-04 20:57:06
+ * @LastEditTime: 2022-08-08 16:29:52
  * @LastEditors: Ride-pig
  * @Description:
- * @FilePath: \less-music\src\router\config\index.tsx
+ * @FilePath: \eee\less-music\src\router\config\index.tsx
  */
 import {
     Home,
@@ -29,6 +29,8 @@ import {
     Playing
 } from "@/pages"
 import Album from "@/pages/Album"
+import DailySong from "@/pages/DailySong"
+
 import { Password } from "@/pages/Login/password"
 import QrCode from "@/pages/Login/QR"
 import { Navigate, useRoutes } from "react-router-dom"
@@ -105,6 +107,10 @@ const RouterConfig = () => {
                 {
                     path: "playlist/:id",
                     element: <Playlist />
+                },
+                {
+                    path: "dailysong/:id",
+                    element: <DailySong />
                 },
                 {
                     path: "album/:id",
