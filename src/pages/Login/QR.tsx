@@ -1,8 +1,8 @@
 /*
  * @Author: Giaruei
  * @Date: 2022-08-03 20:09:37
- * @LastEditTime: 2022-08-08 19:09:21
- * @LastEditors: Giaruei
+ * @LastEditTime: 2022-08-09 09:21:48
+ * @LastEditors: DZR
  * @Description: 二维码登录界面
  * @FilePath: \less-music\src\pages\Login\QR.tsx
  */
@@ -94,7 +94,7 @@ export const QrCode = () => {
             }
         }, 4000)
         return () => clearInterval(timer)
-    }, [key, navigate])
+    }, [key, navigate, toast])
 
     return (
         <Flex

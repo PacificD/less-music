@@ -1,7 +1,7 @@
 /*
  * @Author: Ride-pig
  * @Date: 2022-08-08 11:38:44
- * @LastEditTime: 2022-08-08 22:59:57
+ * @LastEditTime: 2022-08-09 09:20:36
  * @LastEditors: DZR
  * @Description: 每日推荐歌单的制作
  * @FilePath: \less-music\src\pages\DailySong\index.tsx
@@ -30,8 +30,6 @@ const DailySong: FC = () => {
         }
     }, [dailySong])
 
-    console.log(dailySong)
-    
     const { playMusic, playlistDispatch } = useCtxValue()
 
     const playAll = () => {
