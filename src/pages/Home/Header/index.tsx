@@ -3,7 +3,7 @@
  * @Date: 2022-07-20 09:30:37
 <<<<<<< HEAD
 <<<<<<< HEAD
- * @LastEditTime: 2022-08-08 22:56:05
+ * @LastEditTime: 2022-08-09 09:21:25
  * @LastEditors: DZR
  * @Description:
 =======
@@ -43,7 +43,6 @@ import { ColorModeSwitcher } from "@/components"
 import request from "@/services/request"
 import { IRes, METHODS } from "@/types"
 import { useUserStatusQuery } from "@/services"
-import { BiMicrophone } from "react-icons/bi"
 
 const CloudMusic = chakra(RiNeteaseCloudMusicFill)
 
@@ -95,7 +94,7 @@ const Header: FC = () => {
                 isClosable: true
             })
         }
-    }, [])
+    }, [cookie, toast])
 
     return (
         <Center>
@@ -176,7 +175,9 @@ const Header: FC = () => {
                             <Box color="white">你是低等的游客状态</Box>
                         )
                     ) : (
-                        <Button mr="3em" onClick={() => navigate("login")}>点我登录</Button>
+                        <Button mr="3em" onClick={() => navigate("login")}>
+                            点我登录
+                        </Button>
                     )}
                     <ColorModeSwitcher />
                     <Center bg="transparent" className="logout" cursor="pointer" h="3em" w="3em">

@@ -53,7 +53,7 @@ export const Password = () => {
     function verifyCode(phone: any, verifycode: any) {
         request<IRes>("/captcha/sent", { phone: phone, verifycode: verifycode }, METHODS.GET).then(
             function (res) {
-                if (res.data.code != 200) {
+                if (res.data.code !== 200) {
                     toast({
                         title: "验证码错误了捏",
                         description: "刷新页面重新获取验证码捏",

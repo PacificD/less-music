@@ -1,8 +1,8 @@
 /*
  * @Author: Pacific_D
  * @Date: 2022-07-18 12:18:21
- * @LastEditTime: 2022-07-18 12:18:23
- * @LastEditors: Pacific_D
+ * @LastEditTime: 2022-08-09 09:19:49
+ * @LastEditors: DZR
  * @Description:
  * @FilePath: \less-music\src\hooks\useLocalStorage.ts
  */
@@ -65,24 +65,30 @@ function useLocalStorage<T>(key = "", initialValue: T) {
         }
     })
 
-    const setLocalStorageState = useCallback((newState: T) => {
-        try {
-            if (!newState) {
-                setState(null)
-                window.localStorage.removeItem(key)
-            } else {
-                const newStateValue = typeof newState === "function" ? newState(state) : newState
-                setState(newStateValue)
-                window.localStorage.setItem(key, encrypt(newStateValue))
+    const setLocalStorageState = useCallback(
+        (newState: T) => {
+            try {
+                if (!newState) {
+                    setState(null)
+                    window.localStorage.removeItem(key)
+                } else {
+                    const newStateValue =
+                        typeof newState === "function" ? newState(state) : newState
+                    setState(newStateValue)
+                    window.localStorage.setItem(key, encrypt(newStateValue))
+                }
+            } catch (error) {
+                console.error(
+                    `Unable to store new value for ${key} in localStorage. error: ${error}`
+                )
             }
-        } catch (error) {
-            console.error(`Unable to store new value for ${key} in localStorage. error: ${error}`)
-        }
-    }, [])
+        },
+        [key, state]
+    )
 
     useEffect(() => {
         initialValue && setLocalStorageState(initialValue)
-    }, [])
+    }, [initialValue, setLocalStorageState])
 
     return { state, setLocalStorageState }
 }
